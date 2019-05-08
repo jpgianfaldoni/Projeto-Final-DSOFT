@@ -57,10 +57,10 @@ class Time:
     defesa = 0
     overall = 0
     
-    def __init__(self, ataque, defesa, gol):
+    def __init__(self, ataque, defesa, overall):
         self.ataque = ataque
         self.defesa = defesa
-        self.gol = gol
+        self.overall = overall
         
         
     def ataque_time(self):
@@ -80,11 +80,16 @@ class Time:
         for k,v, in self.items():
             overall = overall + v[2]
         return overall
-    
-SaoPaulo = Time((ataque_time(SaoPaulo)),(defesa_time(SaoPaulo)),(overall_time(SaoPaulo)))
-Palmeiras = Time((ataque_time(Palmeiras)),(defesa_time(Palmeiras)),(overall_time(Palmeiras)))
-Santos = Time((ataque_time(Santos)),(defesa_time(Santos)),(overall_time(Santos)))
-Corinthians = Time((ataque_time(Corinthians)),(defesa_time(Corinthians)),(overall_time(Corinthians)))
+
+SaoPaulo = Time(505, 450, 477.5)
+Palmeiras = Time(465, 510, 487.5)
+Santos = Time(440, 485, 440)
+Corinthians = Time(370,400,370)
+
+
+
+
+
 
 
 
