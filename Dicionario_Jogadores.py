@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -
 
-from Class_Jogador import Jogadores
+
 SaoPaulo = {
         Tiago_Volpi : [Tiago_Volpi.ataque, Tiago_Volpi.defesa, Tiago_Volpi.overall],
         Hudson : [Hudson.ataque, Hudson.defesa, Hudson.overall],
@@ -57,4 +57,46 @@ Corinthians = {
         Pedrinho : [Pedrinho.ataque, Pedrinho.defesa, Pedrinho.overall],
         Gustavo : [Gustavo.ataque, Gustavo.defesa, Gustavo.overall],
         }
+
+from Class_Jogador import Jogadores
+class Time:
+    
+    ataque = 0
+    defesa = 0
+    overall = 0
+    
+    def __init__(self, ataque, defesa, gol):
+        self.ataque = ataque
+        self.defesa = defesa
+        self.gol = gol
+        
+    def read_number(self):
+        print(self.ataque)
+        print(self.defesa)
+        
+def ataque_time(time):
+    ataque = 0
+    for k,v, in time.items():
+        ataque = ataque + v[0]
+    return ataque
+
+def defesa_time(time):
+    defesa = 0
+    for k,v, in time.items():
+        defesa = defesa + v[1]
+    return defesa
+    
+def overall_time(time):
+    overall = 0
+    for k,v, in time.items():
+        overall = overall + v[2]
+    return overall
+    
+SaoPaulo = Time((ataque_time(SaoPaulo)),(defesa_time(SaoPaulo)),(overall_time(SaoPaulo)))
+Palmeiras = Time((ataque_time(Palmeiras)),(defesa_time(Palmeiras)),(overall_time(Palmeiras)))
+Santos = Time((ataque_time(Santos)),(defesa_time(Santos)),(overall_time(Santos)))
+Corinthians = Time((ataque_time(Corinthians)),(defesa_time(Corinthians)),(overall_time(Corinthians)))
+
+
+
 

@@ -7,19 +7,8 @@ Created on Sat May  4 19:14:42 2019
 """
 from Class_Jogador import Jogadores
 import random
-class Time:
-    
-    def __init__(self, ataque, defesa, gol):
-        self.ataque = ataque
-        self.defesa = defesa
-        self.gol = gol
-        
-    def read_number(self):
-        print(self.ataque)
-        print(self.defesa)
-        
-Santos = Time(((Felipe_Aguilar.ataque + Vanderlei.ataque + Lucas_Verissimo.ataque)/3 ),((Vanderlei.defesa + Felipe_Aguilar.defesa + Lucas_Verissimo.defesa)/3),0)
-Santos2 = Time(((Gustavo_Henrique.ataque +Victor_Ferraz.ataque + Diego_Pituca.ataque)/3),((Gustavo_Henrique.defesa +Victor_Ferraz.defesa + Diego_Pituca.defesa)/3),0)
+
+S
 
 
 
