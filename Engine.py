@@ -5,7 +5,9 @@ Created on Sat May  4 19:14:42 2019
 
 """
 from Class_Jogador import Jogadores
+from Class_Time import Time
 import random
+
 
 def partida(time1, time2):
     i = 0
@@ -17,13 +19,14 @@ def partida(time1, time2):
                 time1.gol += 1
                 print(i,"':","Gol do time1!")
                 print(time1.gol, "x", time2.gol)
-            if tim2.ataque * random.randint(1,3) > time1.defesa * random.randint(1,3):
+            if time2.ataque * random.randint(1,3) > time1.defesa * random.randint(1,3):
                 if random.randint(1,15)> 14:
                     time2.gol += 1
                     print(i,"':","Gol do time2!")
                     print(time1.gol, "x", time2.gol)
-                    i = i + 1
+        i = i + 1
 
+partida(Corinthians, Santos)
 
 
 
