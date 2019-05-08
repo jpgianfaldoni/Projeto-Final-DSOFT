@@ -3,61 +3,53 @@
 from Class_Jogador import Jogadores
 
 
-SaoPaulo = {
-        Tiago_Volpi : [Tiago_Volpi.ataque, Tiago_Volpi.defesa, Tiago_Volpi.overall],
-        Hudson : [Hudson.ataque, Hudson.defesa, Hudson.overall],
-        Arboleda : [Arboleda.ataque, Arboleda.defesa, Arboleda.overall],
-        Bruno_Alves : [Bruno_Alves.ataque, Bruno_Alves.defesa, Bruno_Alves.overall],
-        Reinaldo : [Reinaldo.ataque, Reinaldo.defesa, Reinaldo.overall],
-        Liziero : [Liziero.ataque, Liziero.defesa, Liziero.overall],
-        Tche_Tche : [Tche_Tche.ataque, Tche_Tche.defesa, Tche_Tche.overall],
-        Everton : [Everton.ataque, Everton.defesa, Everton.overall],
-        Anthony : [Anthony.ataque, Anthony.defesa, Anthony.overall],
-        Toro : [Toro.ataque, Toro.defesa, Toro.overall],
-        Pato : [Pato.ataque, Pato.defesa, Pato.overall]
-        }
+SaoPaulo = {'Tiago_Volpi': [10, 75, 42.5],
+            'Hudson': [60, 60, 60.0],
+            'Arboleda': [20, 70, 45.0],
+            'Bruno_Alves': [10, 60, 35.0], 
+            'Reinaldo': [50, 50, 50.0], 
+            'Liziero': [40, 55, 47.5], 
+            'Tche_Tche': [50, 50, 50.0], 
+            'Everton': [55, 10, 32.5],
+            'Anthony': [70, 10, 40.0], 
+            'Toro': [60, 5, 32.5], 
+            'Pato': [80, 5, 42.5]}
 
-Santos = {
-        Vanderlei : [Vanderlei.ataque, Vanderlei.defesa, Vanderlei.overall],
-        Felipe_Aguilar : [Felipe_Aguilar.ataque, Felipe_Aguilar.defesa, Felipe_Aguilar.overall],
-        Lucas_Verissimo : [Lucas_Verissimo.ataque, Lucas_Verissimo.defesa, Lucas_Verissimo.overall],
-        Gustavo_Henrique : [Gustavo_Henrique.ataque, Gustavo_Henrique.defesa, Gustavo_Henrique.overall],
-        Victor_Ferraz : [Victor_Ferraz.ataque, Victor_Ferraz.defesa, Victor_Ferraz.overall],
-        Diego_Pituca : [Diego_Pituca.ataque, Diego_Pituca.defesa, Diego_Pituca.overall],
-        Carlos_Sanchez : [Carlos_Sanchez.ataque, Carlos_Sanchez.defesa, Carlos_Sanchez.overall],
-        Jean_Mota : [Jean_Mota.ataque, Jean_Mota.defesa, Jean_Mota.overall],
-        Jorge : [Jorge.ataque, Jorge.defesa, Jorge.overall],
-        Soteldo : [Soteldo.ataque, Soteldo.defesa, Soteldo.overall],
-        Rodrygo : [Rodrygo.ataque, Rodrygo.defesa, Rodrygo.overall],
-        }
+Santos = {'Vanderlei': [5, 80, 42.5], 
+          'Felipe_Aguilar': [10, 70, 40.0], 
+          'Lucas_Verissimo': [5, 65, 35.0], 
+          'Gustavo_Henrique': [10, 70, 40.0], 
+          'Victor_Ferraz': [50, 40, 45.0], 
+          'Diego_Pituca': [50, 35, 42.5],
+          'Carlos_Sanchez': [70, 40, 55.0], 
+          'Jean_Mota': [60, 30, 45.0], 
+          'Jorge': [50, 40, 45.0], 
+          'Soteldo': [60, 5, 32.5], 
+          'Rodrygo': [70, 10, 40.0]}
 
-Palmeiras = {
-        Weverton : [Weverton.ataque, Weverton.defesa, Weverton.overall],
-        Mayke : [Mayke.ataque, Mayke.defesa, Mayke.overall],
-        Gustavo_Gomez : [Gustavo_Gomez.ataque, Gustavo_Gomez.defesa, Gustavo_Gomez.overall],
-        Luan : [Luan.ataque, Luan.defesa, Luan.overall],
-        Victor_Luis : [Victor_Luis.ataque, Victor_Luis.defesa, Victor_Luis.overall],
-        Felipe_Melo : [Felipe_Melo.ataque, Felipe_Melo.defesa, Felipe_Melo.overall],
-        Bruno_Henrique : [Bruno_Henrique.ataque, Bruno_Henrique.defesa, Bruno_Henrique.overall],
-        Ze_Rafael : [Ze_Rafael.ataque, Ze_Rafael.defesa, Ze_Rafael.overall],
-        Gustavo_Scarpa : [Gustavo_Scarpa.ataque, Gustavo_Scarpa.defesa, Gustavo_Scarpa.overall],
-        Dudu : [Dudu.ataque, Dudu.defesa, Dudu.overall],
-        Deyverson : [Deyverson.ataque, Deyverson.defesa, Deyverson.overall],
-        }
+Palmeiras = {'Weverton': [5, 70, 37.5], 
+             'Mayke': [40, 55, 47.5], 
+             'Gustavo_Gomez': [15, 75, 45.0],
+             'Luan': [10, 70, 40.0], 
+             'Victor_Luis': [40, 45, 42.5],
+             'Felipe_Melo': [35, 65, 50.0], 
+             'Bruno_Henrique': [50, 50, 50.0], 
+             'Ze_Rafael': [55, 30, 42.5], 
+             'Gustavo_Scarpa': [70, 20, 45.0], 
+             'Dudu': [80, 20, 50.0], 
+             'Deyverson': [65, 10, 37.5]}
 
-Corinthians = {
-        Cassio : [Cassio.ataque, Cassio.defesa, Cassio.overall],
-        Fagner : [Fagner.ataque, Fagner.defesa, Fagner.overall],
-        Henrique : [Henrique.ataque, Henrique.defesa, Henrique.overall],
-        Manoel : [Manoel.ataque, Manoel.defesa, Manoel.overall],
-        Danilo_Avelar : [Danilo_Avelar.ataque, Danilo_Avelar.defesa, Danilo_Avelar.overall],
-        Ralf : [Ralf.ataque, Ralf.defesa, Ralf.overall],
-        Richard : [Richard.ataque, Richard.defesa, Richard.overall],
-        Junior_Sornoza : [Junior_Sornoza.ataque, Junior_Sornoza.defesa, Junior_Sornoza.overall],
-        Clayson : [Clayson.ataque, Clayson.defesa, Clayson.overall],
-        Pedrinho : [Pedrinho.ataque, Pedrinho.defesa, Pedrinho.overall],
-        Gustavo : [Gustavo.ataque, Gustavo.defesa, Gustavo.overall],
-        }
+Corinthians = {'Cassio': [5, 70, 37.5], 
+               'Fagner': [50, 50, 50.0], 
+               'Henrique': [10, 60, 35.0],
+               'Manoel': [5, 55, 30.0], 
+               'Danilo_Avelar': [30, 30, 30.0], 
+               'Ralf': [25, 55, 40.0], 
+               'Richard': [30, 40, 35.0], 
+               'Junior_Sornoza': [55, 25, 40.0], 
+               'Clayson': [50, 5, 27.5], 
+               'Pedrinho': [55, 5, 30.0], 
+               'Gustavo': [55, 5, 30.0]}
 
 class Time:
     
