@@ -8,10 +8,6 @@ Created on Sat May  4 19:14:42 2019
 from Class_Jogador import Jogadores
 import random
 
-S
-
-
-
 
 i = 0
 while i <= 90:
