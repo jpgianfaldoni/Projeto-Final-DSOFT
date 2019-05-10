@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -
 class Time:
         
-    def __init__(self, jogadores, nome):
+    def __init__(self, jogadores, nome, pontos):
         self.jogadores = jogadores
         self.nome = nome
         
