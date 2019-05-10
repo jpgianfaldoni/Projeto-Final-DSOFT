@@ -106,8 +106,12 @@ while not done:
     pygame.draw.rect(screen, BLACK,pygame.Rect(260, 370, 20, 20))
     #time 2
     pygame.draw.rect(screen, BLACK,pygame.Rect(280, 370, 20, 20))
+    #Tempo de jogo
+    pygame.draw.rect(screen, BLACK,pygame.Rect(620, 20, 120, 40))
+    #Texto de lances
+    pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
     
-  
+    
     
     
     
