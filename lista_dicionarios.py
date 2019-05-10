@@ -4,8 +4,7 @@ Created on Thu May  9 09:53:20 2019
 
 @author: Joao
 """
-# SAO PAULO
-lista_jogadores = [{"nome" : 'Tiago_Volpi',
+lista_dicionario = [{"nome" : 'Tiago_Volpi',
     "ataque" : 10  ,  
     "defesa" : 75,
     "overall" : 42.5,
