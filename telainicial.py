@@ -22,31 +22,23 @@ while not done:
             done =True
 
     pygame.draw.rect(screen, GREEN,pygame.Rect(300, 500, 200, 80) )   
-    pygame.display.flip()
 
     pygame.draw.rect(screen, RED,pygame.Rect(0, 0, 400, 100) )   
-    pygame.display.flip()
 
 
     pygame.draw.rect(screen, RED,pygame.Rect(400, 0, 400, 100) )   
-    pygame.display.flip()
 
    
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 100, 400, 60) )   
-    pygame.display.flip()
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 220, 400, 60) )   
-    pygame.display.flip()
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 340, 400, 60) )   
-    pygame.display.flip()
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 160, 400, 60) )   
-    pygame.display.flip()
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 280, 400, 60) )   
-    pygame.display.flip()
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 400, 400, 60) )   
     pygame.display.flip()
