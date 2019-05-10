@@ -110,7 +110,9 @@ while not done:
     pygame.draw.rect(screen, BLACK,pygame.Rect(620, 20, 120, 40))
     #Texto de lances
     pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
-    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render('Corinthians', True, BLACK)
+    screen.blit(text, [20, 12])
     
     
     
