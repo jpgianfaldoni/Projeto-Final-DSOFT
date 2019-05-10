@@ -42,3 +42,9 @@ while not done:
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 400, 400, 60) )   
     pygame.display.flip()
+    
+    
+    font = pygame.font.SysFont(None, 50)
+    text = font.render('JOGAR', True, WHITE)
+    screen.blit(text, [335, 520])
+    pygame.display.flip()
