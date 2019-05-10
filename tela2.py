@@ -39,7 +39,7 @@ while not done:
    
 
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
-    pygame.display.flip()
+   
     
     pygame.draw.rect(screen, RED,pygame.Rect(550, 150, 200, 300) ) 
     pygame.display.flip()
