@@ -277,16 +277,14 @@ for jogador in lista_jogadores:
     jogadores.append(novo_jogador)
     
     
-SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0)
-Santos = Time(jogadores[11:22], "Santos",0)
-Palmeiras = Time(jogadores[22:33], "Palmeiras",0)
-Corinthians = Time(jogadores[33:45], "Corinthians",0)
+SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0, 0)
+Santos = Time(jogadores[11:22], "Santos",0, 0)
+Palmeiras = Time(jogadores[22:33], "Palmeiras",0, 0)
+Corinthians = Time(jogadores[33:45], "Corinthians",0, 0)
 
 
 def partida(time1, time2):
     i = 0
-    time1.gol = 0
-    time2.gol = 0
     vencedor = 0
     while i <= 90:
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
@@ -309,7 +307,7 @@ def partida(time1, time2):
         vencedor = "empate"
     return vencedor
 
-partida(Santos, Palmeiras)
+print(partida(Santos, Palmeiras))
 
 
 
