@@ -7,6 +7,8 @@ Created on Sat May  4 19:14:42 2019
 from Class_Jogador import Jogador
 from Class_Time import Time
 import random
+from itertools import permutations 
+
 
 lista_jogadores = [{"nome" : 'Tiago_Volpi',
     "ataque" : 10  ,  
@@ -277,14 +279,16 @@ for jogador in lista_jogadores:
     jogadores.append(novo_jogador)
     
     
-SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0, 0)
-Santos = Time(jogadores[11:22], "Santos",0, 0)
-Palmeiras = Time(jogadores[22:33], "Palmeiras",0, 0)
-Corinthians = Time(jogadores[33:45], "Corinthians",0, 0)
+SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0)
+Santos = Time(jogadores[11:22], "Santos", 0)
+Palmeiras = Time(jogadores[22:33], "Palmeiras", 0)
+Corinthians = Time(jogadores[33:45], "Corinthians", 0)
 
 
 def partida(time1, time2):
     i = 0
+    time1.gol = 0
+    time2.gol = 0
     vencedor = 0
     while i <= 90:
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
@@ -300,14 +304,36 @@ def partida(time1, time2):
         i = i + 1
         
     if time1.gol > time2.gol:
-        vencedor = time1.nome
+        vencedor = time1
     elif time2.gol > time1.gol:
-        vencedor = time2.nome
+        vencedor = time2
     else:
         vencedor = "empate"
     return vencedor
 
-print(partida(Santos, Palmeiras))
+
+def matchups(y):
+    perm = permutations(y, 2) 
+    lista = list(perm)
+    return lista
+
+matchs = matchups([SaoPaulo, Santos, Palmeiras, Corinthians])
+
+def campeonato():
+    for i in range(0,len(matchs)):
+        vencedor = partida(matchs[i][0], matchs[i][1])
+        if vencedor == matchs[i][0]:
+            matchs[i][0].pontos +=3
+        elif vencedor == matchs[i][1]:
+            matchs[i][1].pontos +=3
+        else:
+            matchs[i][0].pontos +=1
+            matchs[i][1].pontos +=1
+    return SaoPaulo.pontos, Santos.pontos, Palmeiras.pontos, Corinthians.pontos
+print(campeonato())
+
+
+
 
 
 
