@@ -10,6 +10,7 @@ import pygame
 
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
+pygame.display.set_caption("ELIFOOT")
 done=False
 BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255)

@@ -7,22 +7,21 @@ Created on Tue May  7 16:39:29 2019
 """
 
 import pygame
-import time
+
 
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
+pygame.display.set_caption("ELIFOOT")
 done=False
 BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255)
 BLUE =  (  0,   0, 255)
 GREEN = (  0, 255,   0)
-RED =   (255,   0,   0)   
-while not done:
-    for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            done =True
-                    
-
+RED =   (255,   0,   0)  
+LEFT=1 
+def tela1():
+        
+    pygame.mouse.set_visible(True)
     pygame.draw.rect(screen, GREEN,pygame.Rect(300, 500, 200, 80) )   
 
     pygame.draw.rect(screen, RED,pygame.Rect(0, 0, 400, 100) )   
@@ -45,18 +44,20 @@ while not done:
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 400, 400, 60) )   
     pygame.display.flip()
     
- 
+    
+    
+    #textos
     font = pygame.font.SysFont(None, 50)
     text = font.render('INICIAR', True, WHITE)    
     screen.blit(text, [335, 520])
     pygame.display.flip()
+    text = font.render('Pedro', True, BLACK)    
+    screen.blit(text, [120, 114])
+    pygame.display.flip()
+   
     
-
-
-
-
-#TELA DOIS     
-    time.sleep (20)
+def tela2():    
+    pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
     
     
@@ -64,24 +65,21 @@ while not done:
     
     
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
-    
+        
     
     pygame.draw.rect(screen, BLACK,pygame.Rect(550, 50, 200, 50) )   
-    
+        
     
     pygame.draw.rect(screen, RED,pygame.Rect(550, 150, 200, 300) )   
    
-
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
    
     
     pygame.draw.rect(screen, RED,pygame.Rect(550, 150, 200, 300) ) 
     pygame.display.flip()
-    
-    
-#TELA 3    
-    time.sleep(20)
-    
+
+
+def tela3():
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
     
     
@@ -173,9 +171,32 @@ while not done:
     text = font.render('Corinthians', True, BLACK)
     screen.blit(text, [20, 12])
     
-    
-    
-    
-    
-    
     pygame.display.flip()
+    
+telainicial=True 
+teladois=True
+telatres=False
+ 
+while not done:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            done =True
+        
+        if telainicial==True:
+            tela1()        
+                    
+   
+        
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
+            telainicial=False
+            teladois = False
+            tela2()
+            
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580):
+            telainicial=False
+            
+            tela3()
+            
+
+
+    
