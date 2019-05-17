@@ -136,6 +136,11 @@ def matchups(times):
     return rod1, rod2, rod3
 
 
+def rodada(y):
+    jogo1 = minuto_partida(y[0][0],y[0][1])
+    jogo2 = minuto_partida(y[1][0], y[1][1])
+    return jogo1, jogo2
+
 
 
 
