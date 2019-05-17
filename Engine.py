@@ -9,7 +9,6 @@ from Class_Time import Time
 import random
 from itertools import permutations 
 import json
-
 with open('dicionario.txt','r') as arquivo:
     conteudo = arquivo.read()
 
@@ -63,6 +62,7 @@ def matchups(y):
 
 matchs = matchups([SaoPaulo, Santos, Palmeiras, Corinthians])
 
+
 def campeonato():
     for i in range(0,len(matchs)):
         vencedor = partida(matchs[i][0], matchs[i][1])
@@ -77,8 +77,20 @@ def campeonato():
 print(campeonato())
 
 
-
-
+def minuto_partida(time1, time2):
+    time1.gol = 0
+    time2.gol = 0
+    if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
+        if random.randint(1,15)> 14:
+            time1.gol += 1
+            print("Gol do", time1.nome,"!")
+            print(time1.gol, "x", time2.gol)
+    if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
+        if random.randint(1,15)> 14:
+            time2.gol += 1
+            print("Gol do", time2.nome,"!")
+            print(time1.gol, "x", time2.gol)
+    
 
 
 
