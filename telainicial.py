@@ -7,7 +7,7 @@ Created on Tue May  7 16:39:29 2019
 """
 
 import pygame
-
+import random
 
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
@@ -170,7 +170,18 @@ def tela3():
     font = pygame.font.SysFont(None, 35)
     text = font.render('Corinthians', True, BLACK)
     screen.blit(text, [20, 12])
+#    tempo=pygame.time.Clock(1000)
+#    text = font.render(tempo, True, BLACK)
+#    screen.blit(text, [20, 12])
+#    
+    pygame.display.flip()
     
+def sorteiotimes():
+    font = pygame.font.SysFont(None, 50)
+    time=['corinthians', 'sao paulo']
+    x=random.randint(0,1)
+    text = font.render(time[x], True, BLACK)    
+    screen.blit(text, [400, 160])
     pygame.display.flip()
     
 telainicial=True 
@@ -183,7 +194,8 @@ while not done:
             done =True
         
         if telainicial==True:
-            tela1()        
+            tela1()
+            sorteiotimes()
                     
    
         

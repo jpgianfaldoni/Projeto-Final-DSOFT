@@ -90,7 +90,51 @@ def minuto_partida(time1, time2):
     return placar
 
 
+times=[SaoPaulo.nome, Corinthians.nome, Santos.nome, Palmeiras.nome]
 
+def rodada(times):
+    
+    rod1=[]
+    j1=[]
+    j2=[]
+   
+    j1.append(times[0])
+    j1.append(times[3])
+    j2.append(times[1])
+    j2.append(times[2])
+    
+    rod1.append(j1)
+    rod1.append(j2)
+    
+    rod2=[]
+
+    j3=[]
+    j4=[]
+    j3.append(times[3])
+    j3.append(times[1])
+    j4.append(times[2])
+    j4.append(times[0])
+    
+    rod2.append(j3)
+    rod2.append(j4)
+
+    
+    rod3=[]
+    j5=[]
+    j6=[]
+    
+    j5.append(times[0])
+    j5.append(times[1])
+    j6.append(times[2])
+    j6.append(times[3])
+    
+    rod3.append(j5)
+    rod3.append(j6)
+     
+    return rod1, rod2, rod3
+
+
+print (rodada(times))
 
 
 
