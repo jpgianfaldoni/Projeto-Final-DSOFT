@@ -55,13 +55,6 @@ def partida(time1, time2):
     return vencedor
 
 
-def matchups(y):
-    perm = permutations(y, 2) 
-    lista = list(perm)
-    return lista
-
-matchs = matchups([SaoPaulo, Santos, Palmeiras, Corinthians])
-
 
 def campeonato():
     for i in range(0,len(matchs)):
@@ -90,9 +83,18 @@ def minuto_partida(time1, time2):
     return placar
 
 
-times=[SaoPaulo.nome, Corinthians.nome, Santos.nome, Palmeiras.nome]
+times=[SaoPaulo, Corinthians, Santos, Palmeiras]
+rodada1 = []
+rodada2 = []
+rodada3 = []
+rodada1.append([times[0], times[3]])
+rodada1.append([times[1], times[2]])
+rodada2.append([times[3], times[1]])
+rodada2.append([times[2], times[0]])
+rodada3.append([times[0], times[1]])
+rodada3.append([times[2], times[3]])
 
-def rodada(times):
+def matchups(times):
     
     rod1=[]
     j1=[]
@@ -134,7 +136,10 @@ def rodada(times):
     return rod1, rod2, rod3
 
 
-print (rodada(times))
+def rodada(y):
+    jogo1 = minuto_partida(y[0][0],y[0][1])
+    jogo2 = minuto_partida(y[1][0], y[1][1])
+    return jogo1, jogo2
 
 
 

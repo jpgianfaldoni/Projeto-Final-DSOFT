@@ -60,7 +60,6 @@ def tela1():
     screen.blit(text, [120, 114])
     pygame.display.flip()
    
-    
 def tela2():    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
@@ -82,6 +81,7 @@ def tela2():
     
     pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
     pygame.display.flip()
+
 
 
 def tela3():
