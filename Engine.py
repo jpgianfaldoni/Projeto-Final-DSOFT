@@ -83,14 +83,14 @@ def minuto_partida(time1, time2):
     if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
         if random.randint(1,15)> 14:
             time1.gol += 1
-            print("Gol do", time1.nome,"!")
-            print(time1.gol, "x", time2.gol)
     if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
         if random.randint(1,15)> 14:
             time2.gol += 1
-            print("Gol do", time2.nome,"!")
-            print(time1.gol, "x", time2.gol)
-    
+    placar = (time1.gol, "x" ,time2.gol)
+    return placar
+
+
+
 
 
 
