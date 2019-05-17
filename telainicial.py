@@ -15,19 +15,24 @@ pygame.display.set_caption("ELIFOOT")
 done=False
 BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255)
-BLUE =  (  0,   0, 255)
+BLUE =  (  100,  100, 255)
+BLUE1=(  0,  100, 255)
+BLUE2=(  1,  100, 255)
+BLUE3=(  10,  100, 255)
+BLUE4=(  100,  0, 255)
 GREEN = (  0, 255,   0)
 RED =   (255,   0,   0)  
 LEFT=1 
 def tela1():
         
     pygame.mouse.set_visible(True)
+    screen.fill(BLUE2)
     pygame.draw.rect(screen, GREEN,pygame.Rect(300, 500, 200, 80) )   
 
-    pygame.draw.rect(screen, RED,pygame.Rect(0, 0, 400, 100) )   
+    pygame.draw.rect(screen, BLUE2,pygame.Rect(0, 0, 400, 100) )   
 
 
-    pygame.draw.rect(screen, RED,pygame.Rect(400, 0, 400, 100) )   
+    pygame.draw.rect(screen, BLUE2,pygame.Rect(400, 0, 400, 100) )   
 
    
     
@@ -37,11 +42,11 @@ def tela1():
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 340, 400, 60) )   
     
-    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 160, 400, 60) )   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 100, 400, 60) )   
     
-    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 280, 400, 60) )   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 220, 400, 60) )   
     
-    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 400, 400, 60) )   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 340, 400, 60) )   
     pygame.display.flip()
     
     
@@ -67,15 +72,15 @@ def tela2():
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
         
     
-    pygame.draw.rect(screen, BLACK,pygame.Rect(550, 50, 200, 50) )   
+    pygame.draw.rect(screen, BLUE3,pygame.Rect(550, 50, 200, 50) )   
         
     
-    pygame.draw.rect(screen, RED,pygame.Rect(550, 150, 200, 300) )   
+    pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300) )   
    
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
    
     
-    pygame.draw.rect(screen, RED,pygame.Rect(550, 150, 200, 300) ) 
+    pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
     pygame.display.flip()
 
 
@@ -176,13 +181,14 @@ def tela3():
 #    
     pygame.display.flip()
     
-def sorteiotimes():
-    font = pygame.font.SysFont(None, 50)
-    time=['corinthians', 'sao paulo']
-    x=random.randint(0,1)
-    text = font.render(time[x], True, BLACK)    
-    screen.blit(text, [400, 160])
-    pygame.display.flip()
+
+font = pygame.font.SysFont(None, 50)
+time=['corinthians', 'sao paulo']
+x=random.randint(0,1)
+text = font.render(time[x], True, BLACK)    
+screen.blit(text, [400, 160])
+pygame.display.flip()
+    
     
 telainicial=True 
 teladois=True
@@ -195,7 +201,7 @@ while not done:
         
         if telainicial==True:
             tela1()
-            sorteiotimes()
+        
                     
    
         
