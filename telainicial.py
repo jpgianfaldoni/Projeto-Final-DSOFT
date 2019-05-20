@@ -67,8 +67,27 @@ def tela1():
     text = font.render('TIME', True, WHITE)    
     screen.blit(text, [500, 50])
     pygame.display.flip()
-    
-    
+    time=["SP", "COR", "PAL", "SAN"]
+    x=random.randint(0,3)
+    if x == 0:
+        text = font.render(time[0], True, BLACK)    
+        screen.blit(text, [500, 120])
+        pygame.display.flip()
+        
+    if x==1:
+        text = font.render(time[1], True, BLACK)    
+        screen.blit(text, [500, 120])
+        pygame.display.flip()     
+        
+    if x==2:
+        text = font.render(time[2], True, BLACK)    
+        screen.blit(text, [500, 120])
+        pygame.display.flip()  
+        
+    if x==3: 
+        text = font.render(time[3], True, BLACK)    
+        screen.blit(text, [500, 120])
+        pygame.display.flip()
 def tela2():    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
