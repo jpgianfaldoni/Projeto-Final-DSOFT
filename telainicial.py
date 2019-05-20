@@ -29,10 +29,10 @@ def tela1():
     screen.fill(BLUE2)
     pygame.draw.rect(screen, GREEN,pygame.Rect(300, 500, 200, 80) )   
 
-    pygame.draw.rect(screen, BLUE2,pygame.Rect(0, 0, 400, 100) )   
+    pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 400, 100) )   
 
 
-    pygame.draw.rect(screen, BLUE2,pygame.Rect(400, 0, 400, 100) )   
+    pygame.draw.rect(screen, BLACK,pygame.Rect(400, 0, 400, 100) )   
 
    
     
@@ -60,6 +60,15 @@ def tela1():
     screen.blit(text, [120, 114])
     pygame.display.flip()
    
+    text = font.render('PLAYER', True, WHITE)    
+    screen.blit(text, [100, 50])
+    pygame.display.flip()
+    
+    text = font.render('TIME', True, WHITE)    
+    screen.blit(text, [500, 50])
+    pygame.display.flip()
+    
+    
 def tela2():    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
