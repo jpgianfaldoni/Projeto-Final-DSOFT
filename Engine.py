@@ -65,9 +65,8 @@ def minuto_partida(time1, time2, contador):
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
             if random.randint(1,15)> 14:
                 time2.gol += 1
-    x = "x"
-    placar = (time1.gol, x ,time2.gol)
-    return placar
+#    placar=(time1.gol, "X", time2.gol)            
+    return time1.gol,     time2.gol
 
 
 times=[SaoPaulo, Corinthians, Santos, Palmeiras]
@@ -105,6 +104,12 @@ RED =   (255,   0,   0)
 LEFT=1
 time=["SP", "COR", "PAL", "SAN"]
 x=random.randint(0,3)
+
+def minuto(contador):
+    minuto = int(contador/2)
+    return minuto   
+        
+        
 def tela1():
         
     pygame.mouse.set_visible(True)
@@ -194,66 +199,91 @@ def tela3(contador):
     rodada3.append([times[0], times[1]])
     rodada3.append([times[2], times[3]])
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 20))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 210, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 210, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 210, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 250, 250,20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 250, 240,20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 250, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 290, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 290, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 290, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 330, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 330, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 330, 250, 20)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 370, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 370, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 370, 250, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 10, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 10, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 50, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 50, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 90, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 90, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 130, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 130, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 170, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 170, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 210, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 210, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 250, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 250, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 290, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 290, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 330, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 330, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(260, 370, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(280, 370, 20, 20))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(620, 20, 120, 40))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 10, 60, 20))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 50, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 90, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 130, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 170, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 210, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 250, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 290, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 330, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 370, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
     pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
+    
+    font = pygame.font.SysFont(None, 25)
+    text = font.render("X", True, GREEN)
+    screen.blit(text, [263, 15])
+    screen.blit(text, [263, 55])
+    
+    
+
+    font = pygame.font.SysFont(None, 50)
+    text = font.render(str(minuto(contador)), True, WHITE)
+    screen.blit(text, [650, 30])
+    
+    
+    
+    
     font = pygame.font.SysFont(None, 35)
     text = font.render(str(rodada1[0][0].nome), True, BLACK)
     screen.blit(text, [20, 9])
+    
+    
     font = pygame.font.SysFont(None, 35)
     text = font.render(str(rodada1[0][1].nome), True, BLACK)
     screen.blit(text, [350, 9])
-    font = pygame.font.SysFont(None, 20)
+    
+    
+    font = pygame.font.SysFont(None, 30)  
     text = font.render(str(minuto_partida(rodada1[0][0], rodada1[0][1], contador)), True, GREEN)
-    screen.blit(text, [260, 12])
+    screen.blit(text, [245, 10])
+    
     font = pygame.font.SysFont(None, 35)
     text = font.render(str(rodada1[1][0].nome), True, BLACK)
     screen.blit(text, [20, 50])
+    
     font = pygame.font.SysFont(None, 35)
     text = font.render(str(rodada1[1][1].nome), True, BLACK)
     screen.blit(text, [350, 50])
-    font = pygame.font.SysFont(None, 20)
+    
+    font = pygame.font.SysFont(None, 30)
     text = font.render(str(minuto_partida(rodada1[1][0], rodada1[1][1], contador)), True, GREEN)
-    screen.blit(text, [260, 53])
+    screen.blit(text, [245, 50])
 #    
     pygame.display.flip()
     
@@ -277,7 +307,6 @@ try:
     while running:
         # Ajusta a velocidade do jogo.
         
-        contador += 1
         clock.tick(FPS)
         if telainicial == True:
             tela1()
@@ -298,6 +327,8 @@ try:
             tela2()
         if telatres == False:
             tela3(contador)
+            contador += 1
+
 
         
         # Depois de desenhar tudo, inverte o display.

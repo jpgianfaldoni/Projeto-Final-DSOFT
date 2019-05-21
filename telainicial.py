@@ -92,12 +92,12 @@ def tela1():
 def tela2():    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
-    pygame.draw.rect(screen, GREEN,pygame.Rect(550, 500, 200, 80) )   
+    pygame.draw.rect(screen, GREEN,pygame.Rect(550, 500, 200, 80))   
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
-    pygame.draw.rect(screen, BLUE3,pygame.Rect(550, 50, 200, 50) )   
-    pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300) )   
-    pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
-    pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
+    pygame.draw.rect(screen, BLUE3,pygame.Rect(550, 50, 200, 50))   
+    pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300))   
+    pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30))   
+    pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300)) 
     pygame.display.flip()
 
 
