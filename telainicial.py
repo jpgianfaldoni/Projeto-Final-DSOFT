@@ -22,7 +22,9 @@ BLUE3=(  10,  100, 255)
 BLUE4=(  100,  0, 255)
 GREEN = (  0, 255,   0)
 RED =   (255,   0,   0)  
-LEFT=1 
+LEFT=1
+time=["SP", "COR", "PAL", "SAN"]
+x=random.randint(0,3)
 def tela1():
         
     pygame.mouse.set_visible(True)
@@ -48,8 +50,7 @@ def tela1():
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 340, 400, 60) )   
     pygame.display.flip()
-    
-    
+
     
     #textos
     font = pygame.font.SysFont(None, 50)
@@ -66,14 +67,11 @@ def tela1():
     
     text = font.render('TIME', True, WHITE)    
     screen.blit(text, [500, 50])
-    pygame.display.flip()
-    time=["SP", "COR", "PAL", "SAN"]
-    x=random.randint(0,3)
     if x == 0:
         text = font.render(time[0], True, BLACK)    
         screen.blit(text, [500, 120])
         pygame.display.flip()
-        
+    
     if x==1:
         text = font.render(time[1], True, BLACK)    
         screen.blit(text, [500, 120])
@@ -88,25 +86,17 @@ def tela1():
         text = font.render(time[3], True, BLACK)    
         screen.blit(text, [500, 120])
         pygame.display.flip()
+    pygame.display.flip()
+
+        
 def tela2():    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
-    
-    
     pygame.draw.rect(screen, GREEN,pygame.Rect(550, 500, 200, 80) )   
-    
-    
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
-        
-    
     pygame.draw.rect(screen, BLUE3,pygame.Rect(550, 50, 200, 50) )   
-        
-    
     pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300) )   
-   
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
-   
-    
     pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
     pygame.display.flip()
 
@@ -114,36 +104,24 @@ def tela2():
 
 def tela3():
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
-    
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
-    
-     
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 20)) 
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 20))   
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 20)) 
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 20)) 
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 210, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 210, 250, 20)) 
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 250, 250,20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 250, 250, 20)) 
-   
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 290, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 290, 250, 20)) 
-    
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 330, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 330, 250, 20)) 
-   
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 370, 250, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 370, 250, 20))
     
@@ -202,7 +180,7 @@ def tela3():
     pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
     font = pygame.font.SysFont(None, 35)
     text = font.render('Corinthians', True, BLACK)
-    screen.blit(text, [20, 12])
+    screen.blit(text, [20, 9])
 #    tempo=pygame.time.Clock(1000)
 #    text = font.render(tempo, True, BLACK)
 #    screen.blit(text, [20, 12])
@@ -210,39 +188,53 @@ def tela3():
     pygame.display.flip()
     
 
-font = pygame.font.SysFont(None, 50)
-time=['corinthians', 'sao paulo']
-x=random.randint(0,1)
-text = font.render(time[x], True, BLACK)    
-screen.blit(text, [400, 160])
-pygame.display.flip()
+
     
     
 telainicial=True 
 teladois=True
-telatres=False
+telatres=True
+clock = pygame.time.Clock()
+
+
+
+
+
  
-while not done:
-    for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            done =True
+try:
+    
+    # Loop principal.
+    running = True
+    while running:
         
-        if telainicial==True:
+        # Ajusta a velocidade do jogo.
+        clock.tick(5)
+        if telainicial == True:
             tela1()
         
-                    
-   
-        
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
-            telainicial=False
-            teladois = False
+        # Processa os eventos (mouse, teclado, botão, etc).
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
+                telainicial = False
+                teladois = False
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580):
+                telainicial = False
+                teladois = True
+                telatres = False
+            # Verifica se foi fechado
+            if event.type == pygame.QUIT:
+                running = False
+        if teladois == False:
             tela2()
-            
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580):
-            telainicial=False
-            
+        if telatres == False:
             tela3()
-            
+
+        
+        # Depois de desenhar tudo, inverte o display.
+        pygame.display.flip()
+        
+finally:
+    pygame.quit()
 
 
     
