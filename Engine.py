@@ -183,29 +183,24 @@ def tela2():
     pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300) )   
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
     pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
-    pygame.display.flip()
 
 
     font = pygame.font.SysFont(None, 40)
     text = font.render("Jogadores", True, RED)
     screen.blit(text, [10, 30])
-    pygame.display.flip()    
     
     font = pygame.font.SysFont(None, 40)
     text = font.render("Atq", True, RED)
     screen.blit(text, [265, 30])
-    pygame.display.flip()    
     
     
     font = pygame.font.SysFont(None, 40)
     text = font.render("Def", True, RED)
     screen.blit(text, [350, 30])
-    pygame.display.flip()    
     
     font = pygame.font.SysFont(None, 40)
     text = font.render("OV", True, RED)
     screen.blit(text, [420, 30])
-    pygame.display.flip()    
     
 
 
