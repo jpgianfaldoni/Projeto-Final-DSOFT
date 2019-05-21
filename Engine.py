@@ -56,18 +56,7 @@ def partida(time1, time2):
 
 
 
-def campeonato():
-    for i in range(0,len(matchs)):
-        vencedor = partida(matchs[i][0], matchs[i][1])
-        if vencedor == matchs[i][0]:
-            matchs[i][0].pontos +=3
-        elif vencedor == matchs[i][1]:
-            matchs[i][1].pontos +=3
-        else:
-            matchs[i][0].pontos +=1
-            matchs[i][1].pontos +=1
-    return SaoPaulo.pontos, Santos.pontos, Palmeiras.pontos, Corinthians.pontos
-print(campeonato())
+
 
 
 def minuto_partida(time1, time2):
@@ -141,7 +130,7 @@ def rodada(y):
     jogo2 = minuto_partida(y[1][0], y[1][1])
     return jogo1, jogo2
 
-
+print(minuto_partida(Santos, Corinthians))
 
 
 
