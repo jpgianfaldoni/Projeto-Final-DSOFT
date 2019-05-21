@@ -4,6 +4,7 @@
 Created on Sat May  4 19:14:42 2019
 
 """
+import pygame
 from Class_Jogador import Jogador
 from Class_Time import Time
 import random
@@ -303,7 +304,6 @@ try:
         pygame.display.flip()
 finally:
     pygame.quit()
-
 
 
             
