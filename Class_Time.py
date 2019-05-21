@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -
 class Time:
         
-    def __init__(self, jogadores, nome, pontos):
+    def __init__(self, jogadores, nome, gol):
         self.jogadores = jogadores
         self.nome = nome
-        self.pontos = pontos
+        self.gol = gol
         
     def calcula_ataque(self):
         ataque = 0
