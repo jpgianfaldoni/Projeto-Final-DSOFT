@@ -186,6 +186,163 @@ def tela2():
     pygame.display.flip()
 
 
+    font = pygame.font.SysFont(None, 40)
+    text = font.render("Jogadores", True, RED)
+    screen.blit(text, [10, 30])
+    pygame.display.flip()    
+    
+    font = pygame.font.SysFont(None, 40)
+    text = font.render("Atq", True, RED)
+    screen.blit(text, [265, 30])
+    pygame.display.flip()    
+    
+    
+    font = pygame.font.SysFont(None, 40)
+    text = font.render("Def", True, RED)
+    screen.blit(text, [350, 30])
+    pygame.display.flip()    
+    
+    
+    #NOMES
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[0].nome), True, WHITE)
+    screen.blit(text, [10, 80])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[1].nome), True, WHITE)
+    screen.blit(text, [10, 100])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[2].nome), True, WHITE)
+    screen.blit(text, [10, 120])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[3].nome), True, WHITE)
+    screen.blit(text, [10, 140])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[4].nome), True, WHITE)
+    screen.blit(text, [10, 160])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[5].nome), True, WHITE)
+    screen.blit(text, [10, 180])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[6].nome), True, WHITE)
+    screen.blit(text, [10, 200])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[7].nome), True, WHITE)
+    screen.blit(text, [10, 220])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[8].nome), True, WHITE)
+    screen.blit(text, [10, 240])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[9].nome), True, WHITE)
+    screen.blit(text, [10, 260])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[10].nome), True, WHITE)
+    screen.blit(text, [10, 280])
+    #ATQ
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[0].ataque), True, WHITE)
+    screen.blit(text, [280, 80])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[1].ataque), True, WHITE)
+    screen.blit(text, [280, 100])
+    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[2].ataque), True, WHITE)
+    screen.blit(text, [280, 120])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[3].ataque), True, WHITE)
+    screen.blit(text, [280, 140])
+
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[4].ataque), True, WHITE)
+    screen.blit(text, [280, 160])
+
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[5].ataque), True, WHITE)
+    screen.blit(text, [280, 180])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[6].ataque), True, WHITE)
+    screen.blit(text, [280, 200])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[7].ataque), True, WHITE)
+    screen.blit(text, [280, 220])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[8].ataque), True, WHITE)
+    screen.blit(text, [280, 240])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[9].ataque), True, WHITE)
+    screen.blit(text, [280, 260])    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[10].ataque), True, WHITE)
+    screen.blit(text, [280, 280])    
+    
+
+    #DEF
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[0].defesa), True, WHITE)
+    screen.blit(text, [350, 80])
+
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[1].defesa), True, WHITE)
+    screen.blit(text, [350, 100])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[2].defesa), True, WHITE)
+    screen.blit(text, [350, 120])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[3].defesa), True, WHITE)
+    screen.blit(text, [350, 140])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[4].defesa), True, WHITE)
+    screen.blit(text, [350, 160])
+    
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[5].defesa), True, WHITE)
+    screen.blit(text, [350, 180])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[6].defesa), True, WHITE)
+    screen.blit(text, [350, 200])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[7].defesa), True, WHITE)
+    screen.blit(text, [350, 220])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[8].defesa), True, WHITE)
+    screen.blit(text, [350, 240])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[9].defesa), True, WHITE)
+    screen.blit(text, [350, 260])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(SaoPaulo.jogadores[10].defesa), True, WHITE)
+    screen.blit(text, [350, 280])
+
+    pygame.display.flip()
+
+
 
 def tela3(contador):
     times=[SaoPaulo, Corinthians, Santos, Palmeiras]
