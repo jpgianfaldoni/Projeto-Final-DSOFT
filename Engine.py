@@ -328,6 +328,11 @@ try:
         if telatres == False:
             tela3(contador)
             contador += 1
+        if contador == 180:
+            tela2()
+            teladois = False
+            telatres = True
+            telainicial = False
 
 
         
