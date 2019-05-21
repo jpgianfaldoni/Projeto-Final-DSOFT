@@ -1,6 +1,6 @@
 {
 	"jogadores": [{
-			"nome": "Tiago_Volpi",
+			"nome": "Tiago Volpi",
 			"ataque": 10,
 			"defesa": 75,
 			"overall": 42.5
@@ -18,7 +18,7 @@
 			"overall": 45
 		},
 		{
-			"nome": "Bruno_Alves",
+			"nome": "Bruno Alves",
 			"ataque": 10,
 			"defesa": 60,
 			"overall": 35
