@@ -480,6 +480,207 @@ def tela3(contador):
   
     pygame.display.flip()
     
+def tela4(contador):
+    times=[SaoPaulo, Corinthians, Santos, Palmeiras]
+    rodada1 = []
+    rodada2 = []
+    rodada3 = []
+    rodada1.append([times[0], times[3]])
+    rodada1.append([times[1], times[2]])
+    rodada2.append([times[3], times[1]])
+    rodada2.append([times[2], times[0]])
+    rodada3.append([times[0], times[1]])
+    rodada3.append([times[2], times[3]])
+    pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 210, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 210, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 250, 240,20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 250, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 290, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 290, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 330, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 330, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 370, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 370, 250, 20))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 10, 60, 20))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 50, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 90, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 130, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 170, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 210, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 250, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 290, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 330, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 370, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
+    pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
+    
+    font = pygame.font.SysFont(None, 25)
+    text = font.render("X", True, GREEN)
+    screen.blit(text, [263, 15])
+    screen.blit(text, [263, 55])
+    
+    
+
+    font = pygame.font.SysFont(None, 50)
+    text = font.render(str(minuto(contador)), True, WHITE)
+    screen.blit(text, [650, 30])
+    
+    
+    
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada2[0][0].nome), True, BLACK)
+    screen.blit(text, [20, 9])
+    
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada2[0][1].nome), True, BLACK)
+    screen.blit(text, [350, 9])
+    
+    
+    font = pygame.font.SysFont(None, 30)  
+    text = font.render(str(minuto_partida(rodada2[0][0], rodada2[0][1], contador)), True, GREEN)
+    screen.blit(text, [245, 10])
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada2[1][0].nome), True, BLACK)
+    screen.blit(text, [20, 50])
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada2[1][1].nome), True, BLACK)
+    screen.blit(text, [350, 50])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(minuto_partida(rodada2[1][0], rodada2[1][1], contador)), True, GREEN)
+    screen.blit(text, [245, 50])
+  
+    pygame.display.flip()
+    
+def tela5(contador):
+    times=[SaoPaulo, Corinthians, Santos, Palmeiras]
+    rodada1 = []
+    rodada2 = []
+    rodada3 = []
+    rodada1.append([times[0], times[3]])
+    rodada1.append([times[1], times[2]])
+    rodada2.append([times[3], times[1]])
+    rodada2.append([times[2], times[0]])
+    rodada3.append([times[0], times[1]])
+    rodada3.append([times[2], times[3]])
+    pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 210, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 210, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 250, 240,20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 250, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 290, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 290, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 330, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 330, 250, 20)) 
+    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 370, 240, 20))   
+    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 370, 250, 20))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 10, 60, 20))
+
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 50, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 90, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 130, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 170, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 210, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 250, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 290, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 330, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(240, 370, 60, 20))
+
+    pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
+    pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
+    
+    font = pygame.font.SysFont(None, 25)
+    text = font.render("X", True, GREEN)
+    screen.blit(text, [263, 15])
+    screen.blit(text, [263, 55])
+    
+    
+
+    font = pygame.font.SysFont(None, 50)
+    text = font.render(str(minuto(contador)), True, WHITE)
+    screen.blit(text, [650, 30])
+    
+    
+    
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada3[0][0].nome), True, BLACK)
+    screen.blit(text, [20, 9])
+    
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada3[0][1].nome), True, BLACK)
+    screen.blit(text, [350, 9])
+    
+    
+    font = pygame.font.SysFont(None, 30)  
+    text = font.render(str(minuto_partida(rodada3[0][0], rodada3[0][1], contador)), True, GREEN)
+    screen.blit(text, [245, 10])
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada3[1][0].nome), True, BLACK)
+    screen.blit(text, [20, 50])
+    
+    font = pygame.font.SysFont(None, 35)
+    text = font.render(str(rodada3[1][1].nome), True, BLACK)
+    screen.blit(text, [350, 50])
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(minuto_partida(rodada3[1][0], rodada3[1][1], contador)), True, GREEN)
+    screen.blit(text, [245, 50])
+  
+    pygame.display.flip()
+    
+    
 
 
     
