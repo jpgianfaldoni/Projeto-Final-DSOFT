@@ -22,10 +22,10 @@ for jogador in lista_jogadores:
     jogadores.append(novo_jogador)
     
     
-SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0)
-Santos = Time(jogadores[11:22], "Santos", 0)
-Palmeiras = Time(jogadores[22:33], "Palmeiras", 0)
-Corinthians = Time(jogadores[33:45], "Corinthians", 0)
+SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0,0)
+Santos = Time(jogadores[11:22], "Santos", 0,0)
+Palmeiras = Time(jogadores[22:33], "Palmeiras", 0,0)
+Corinthians = Time(jogadores[33:45], "Corinthians", 0,0)
 
 
 def partida(time1, time2):
@@ -64,22 +64,28 @@ def minuto_partida(time1, time2, contador):
                 time1.gol += 1
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
             if random.randint(1,15)> 14:
-                time2.gol += 1
-#    placar=(time1.gol, "X", time2.gol)            
+                time2.gol += 1            
     return time1.gol,     time2.gol
 
-
-times=[SaoPaulo, Corinthians, Santos, Palmeiras]
-rodada1 = []
-rodada2 = []
-rodada3 = []
-rodada1.append([times[0], times[3]])
-rodada1.append([times[1], times[2]])
-rodada2.append([times[3], times[1]])
-rodada2.append([times[2], times[0]])
-rodada3.append([times[0], times[1]])
-rodada3.append([times[2], times[3]])
-
+def pontuacao(rodada):
+    rodadas = [rodada1, rodada2, rodada3]
+    if rodadas[rodada][0][1].gol > rodadas[rodada][0][0].gol:
+        rodadas[rodada][0][1].pontos += 3
+    if rodadas[rodada][0][0].gol > rodadas[rodada][0][1].gol:
+        rodadas[rodada][0][0].pontos += 3
+    if rodadas[rodada][0][0].gol == rodadas[rodada][0][1].gol:
+        rodadas[rodada][0][0].pontos +=1
+        rodadas[rodada][0][1].pontos +=1
+    if rodadas[rodada][1][1].gol > rodadas[rodada][1][0].gol:
+        rodadas[rodada][1][1].pontos += 3
+    if rodadas[rodada][1][0].gol > rodada1[1][1].gol:
+        rodadas[rodada][1][0].pontos += 3
+    if rodadas[rodada][1][0].gol == rodada1[1][1].gol:
+        rodadas[rodada][1][0].pontos +=1
+        rodadas[rodada][1][1].pontos +=1
+    rodadas[rodada][0][0].gol = 0
+    rodadas[rodada][0][1].gol = 0
+    rodadas[rodada][1][1].gol = 0
 
 
 
@@ -384,16 +390,6 @@ def tela2():
     
 
 def tela3(contador):
-    times=[SaoPaulo, Corinthians, Santos, Palmeiras]
-    rodada1 = []
-    rodada2 = []
-    rodada3 = []
-    rodada1.append([times[0], times[3]])
-    rodada1.append([times[1], times[2]])
-    rodada2.append([times[3], times[1]])
-    rodada2.append([times[2], times[0]])
-    rodada3.append([times[0], times[1]])
-    rodada3.append([times[2], times[3]])
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
@@ -484,16 +480,6 @@ def tela3(contador):
     pygame.display.flip()
     
 def tela4(contador):
-    times=[SaoPaulo, Corinthians, Santos, Palmeiras]
-    rodada1 = []
-    rodada2 = []
-    rodada3 = []
-    rodada1.append([times[0], times[3]])
-    rodada1.append([times[1], times[2]])
-    rodada2.append([times[3], times[1]])
-    rodada2.append([times[2], times[0]])
-    rodada3.append([times[0], times[1]])
-    rodada3.append([times[2], times[3]])
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
@@ -584,16 +570,6 @@ def tela4(contador):
     pygame.display.flip()
     
 def tela5(contador):
-    times=[SaoPaulo, Corinthians, Santos, Palmeiras]
-    rodada1 = []
-    rodada2 = []
-    rodada3 = []
-    rodada1.append([times[0], times[3]])
-    rodada1.append([times[1], times[2]])
-    rodada2.append([times[3], times[1]])
-    rodada2.append([times[2], times[0]])
-    rodada3.append([times[0], times[1]])
-    rodada3.append([times[2], times[3]])
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 10, 240, 20))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 10, 250, 20)) 
@@ -691,11 +667,23 @@ def tela5(contador):
 telainicial=True 
 teladois=True
 telatres=True
+telaquatro = True
+telacinco = True
 clock = pygame.time.Clock()
 
 
-
+times=[SaoPaulo, Corinthians, Santos, Palmeiras]
+rodada1 = []
+rodada2 = []
+rodada3 = []
+rodada1.append([times[0], times[3]])
+rodada1.append([times[1], times[2]])
+rodada2.append([times[3], times[1]])
+rodada2.append([times[2], times[0]])
+rodada3.append([times[0], times[1]])
+rodada3.append([times[2], times[3]])
 contador = 0
+rodada = 0
 
 try:
     
@@ -717,6 +705,17 @@ try:
                 telainicial = False
                 teladois = True
                 telatres = False
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580) and rodada ==1:
+                telainicial = False
+                teladois = True
+                telatres = True
+                telaquatro = False
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580) and rodada ==2:
+                telainicial = False
+                teladois = True
+                telatres = True
+                telaquatro = True
+                telacinco = False
             # Verifica se foi fechado
             if event.type == pygame.QUIT:
                 running = False
@@ -725,12 +724,22 @@ try:
         if telatres == False:
             tela3(contador)
             contador += 1
+        if telaquatro == False:
+            tela4(contador)
+            contador += 1
+        if telacinco == False:
+            tela5(contador)
+            contador += 1
         if contador == 180:
             tela2()
             teladois = False
             telatres = True
             telainicial = False
-
+            telaquatro = True
+            telacinco = True
+            contador = 0
+            pontuacao(rodada)
+            rodada += 1
 
         
         # Depois de desenhar tudo, inverte o display.
@@ -738,7 +747,10 @@ try:
 finally:
     pygame.quit()
 
-
+print(rodada1[0][1].pontos)
+print(rodada1[0][0].pontos)
+print(rodada1[1][0].pontos)
+print(rodada1[1][1].pontos)
             
     
      
