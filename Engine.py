@@ -184,7 +184,10 @@ def tela2():
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
     pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
 
-
+    font = pygame.font.SysFont(None, 40)
+    text = font.render(str(time[x].nome), True, WHITE)
+    screen.blit(text, [300, 8])
+    
     font = pygame.font.SysFont(None, 40)
     text = font.render("Jogadores", True, RED)
     screen.blit(text, [10, 30])
