@@ -86,6 +86,7 @@ def pontuacao(rodada):
     rodadas[rodada][0][0].gol = 0
     rodadas[rodada][0][1].gol = 0
     rodadas[rodada][1][1].gol = 0
+    rodadas[rodada][1][0].gol = 0
 
 
 
