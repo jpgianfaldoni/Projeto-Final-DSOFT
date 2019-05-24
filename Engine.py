@@ -101,7 +101,7 @@ def relaciona(classificacao):
             pontostimes.append(Santos.nome)
     return pontostimes
         
-        
+classificacao_times = relaciona(classificacao)
         
         
 def minuto(contador):
@@ -401,7 +401,10 @@ def tela2():
     screen.blit(text, [700, 250])
     text = font.render(str(classificacao_times[3]), True, BLACK)
     screen.blit(text, [560, 250])
-    
+  
+    font = pygame.font.SysFont(None, 50)
+    text = font.render("JOGAR", True, WHITE)
+    screen.blit(text, [590, 520])
     pygame.display.flip()
     
 
@@ -677,7 +680,39 @@ def tela5(contador):
     
     
 
-
+def telaFINAL():
+    screen.fill(BLUE4)
+    pygame.draw.rect(screen, WHITE,pygame.Rect(100, 80, 600, 400)) 
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[0]), True, BLACK)
+    screen.blit(text, [600, 400])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[0]), True, BLACK)
+    screen.blit(text, [460, 400])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[1]), True, BLACK)
+    screen.blit(text, [600, 350])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[1]), True, BLACK)
+    screen.blit(text, [460, 350])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[2]), True, BLACK)
+    screen.blit(text, [600, 300])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[2]), True, BLACK)
+    screen.blit(text, [460, 300])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[3]), True, BLACK)
+    screen.blit(text, [600, 250])
+    text = font.render(str(classificacao_times[3]), True, BLACK)
+    screen.blit(text, [460, 250])
+    font=pygame.font.SysFont(None, 60)
+    text = font.render("CAMPEAO - {}".format(classificacao_times[0]), True, GREEN)
+    screen.blit(text, [120, 100])
+    font=pygame.font.SysFont(None, 20)
+    text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[1]), True, BLACK)
+    screen.blit(text, [123, 140])
+    pygame.display.flip()
     
     
 telainicial=True 
@@ -685,6 +720,7 @@ teladois=True
 telatres=True
 telaquatro = True
 telacinco = True
+telafinal=True
 clock = pygame.time.Clock()
 
 
@@ -746,6 +782,9 @@ try:
         if telacinco == False:
             tela5(contador)
             contador += 1
+        if telafinal ==False:
+            telaFINAL()
+            
         if contador == 180:
             teladois = False
             telatres = True
@@ -759,6 +798,15 @@ try:
             classificacao_times = relaciona(classificacao)
             tela2()
             rodada += 1
+            if rodada ==3: 
+                telafinal=False
+                teladois = True
+            print(SaoPaulo.pontos)
+            print(Santos.pontos)
+            print(Corinthians.pontos)
+            print(Palmeiras.pontos)
+
+
 
         
         # Depois de desenhar tudo, inverte o display.
