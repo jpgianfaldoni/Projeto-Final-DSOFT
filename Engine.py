@@ -7,6 +7,7 @@ Created on Sat May  4 19:14:42 2019
 import pygame
 from Class_Jogador import Jogador
 from Class_Time import Time
+from itertools import cycle , islice, chain
 import random
 import json
 with open('dicionario.txt','r') as arquivo:
