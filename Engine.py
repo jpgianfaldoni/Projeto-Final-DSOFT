@@ -26,8 +26,25 @@ SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0,0)
 Santos = Time(jogadores[11:22], "Santos", 0,0)
 Palmeiras = Time(jogadores[22:33], "Palmeiras", 0,0)
 Corinthians = Time(jogadores[33:45], "Corinthians", 0,0)
+times=[SaoPaulo, Corinthians, Santos, Palmeiras]
 
 
+def cria_lista_rodadas(times):
+    items = list(times)
+    if len(items) % 2 != 0:
+        items.append(None)
+    fixed = items[:1]
+    cyclers = cycle(items[1:])
+    rounds = len(items) - 1
+    npairs = len(items) // 2
+    return [
+        list(zip(
+            chain(fixed, islice(cyclers, npairs-1)),
+            reversed(list(islice(cyclers, npairs)))
+        ))
+        for _ in range(rounds)
+        for _ in [next(cyclers)]
+    ]
 
 
 def minuto_partida(time1, time2, contador):
@@ -102,13 +119,10 @@ def relaciona(classificacao):
         if Santos.nome not in pontostimes and Santos.pontos == i:
             pontostimes.append(Santos.nome)
     return pontostimes
-<<<<<<< HEAD
         
 classificacao_times = relaciona(classificacao)
-=======
 
         
->>>>>>> e1014a25499883dee12d3e2b751b0d959661713b
         
         
 def minuto(contador):
@@ -714,10 +728,10 @@ def telaFINAL():
     text = font.render(str(classificacao_times[3]), True, BLACK)
     screen.blit(text, [460, 250])
     font=pygame.font.SysFont(None, 60)
-    text = font.render("CAMPEAO - {}".format(classificacao_times[0]), True, GREEN)
+    text = font.render("CAMPEAO - {}".format(classificacao_times[3]), True, GREEN)
     screen.blit(text, [120, 100])
     font=pygame.font.SysFont(None, 20)
-    text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[1]), True, BLACK)
+    text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[2]), True, BLACK)
     screen.blit(text, [123, 140])
     pygame.display.flip()
     
@@ -729,18 +743,11 @@ telaquatro = True
 telacinco = True
 telafinal=True
 clock = pygame.time.Clock()
-
-
-times=[SaoPaulo, Corinthians, Santos, Palmeiras]
-rodada1 = []
-rodada2 = []
-rodada3 = []
-rodada1.append([times[0], times[3]])
-rodada1.append([times[1], times[2]])
-rodada2.append([times[3], times[1]])
-rodada2.append([times[2], times[0]])
-rodada3.append([times[0], times[1]])
-rodada3.append([times[2], times[3]])
+lista_rodadas = cria_lista_rodadas(times)
+rodada1 = lista_rodadas[0]
+rodada2 = lista_rodadas[1]
+rodada3 = lista_rodadas[2]
+print(rodada1)
 contador = 0
 rodada = 0
 
