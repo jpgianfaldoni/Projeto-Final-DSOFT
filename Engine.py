@@ -87,6 +87,8 @@ time=[SaoPaulo, Corinthians, Palmeiras, Santos]
 x=random.randint(0,3)
 pontos_times = [SaoPaulo.pontos, Corinthians.pontos, Santos.pontos, Palmeiras.pontos]     
 classificacao = sorted(pontos_times)
+classificacao_times = relaciona(classificacao)
+
 
 def relaciona(classificacao):
     pontostimes = []
@@ -100,8 +102,13 @@ def relaciona(classificacao):
         if Santos.nome not in pontostimes and Santos.pontos == i:
             pontostimes.append(Santos.nome)
     return pontostimes
+<<<<<<< HEAD
         
 classificacao_times = relaciona(classificacao)
+=======
+
+        
+>>>>>>> e1014a25499883dee12d3e2b751b0d959661713b
         
         
 def minuto(contador):
