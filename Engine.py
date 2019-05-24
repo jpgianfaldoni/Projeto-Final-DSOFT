@@ -28,42 +28,15 @@ Palmeiras = Time(jogadores[22:33], "Palmeiras", 0,0)
 Corinthians = Time(jogadores[33:45], "Corinthians", 0,0)
 
 
-def partida(time1, time2):
-    i = 0
-    time1.gol = 0
-    time2.gol = 0
-    vencedor = 0
-    while i <= 90:
-        if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
-            if random.randint(1,15)> 14:
-                time1.gol += 1
-                print(i,"':","Gol do", time1.nome,"!")
-                print(time1.gol, "x", time2.gol)
-        if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
-            if random.randint(1,15)> 14:
-                time2.gol += 1
-                print(i,"':","Gol do", time2.nome,"!")
-                print(time1.gol, "x", time2.gol)
-        i = i + 1
-        
-    if time1.gol > time2.gol:
-        vencedor = time1
-    elif time2.gol > time1.gol:
-        vencedor = time2
-    else:
-        vencedor = "empate"
-    return vencedor
-
-
 
 
 def minuto_partida(time1, time2, contador):
     if contador % FPS == 0:
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
-            if random.randint(1,15)> 14:
+            if random.randint(1,15)> 12:
                 time1.gol += 1
         if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
-            if random.randint(1,15)> 14:
+            if random.randint(1,15)> 12:
                 time2.gol += 1            
     return time1.gol,     time2.gol
 
@@ -90,6 +63,7 @@ def pontuacao(rodada):
 
 
 
+
 ####################################TELAS##########################################################
 
 
@@ -111,7 +85,25 @@ RED =   (255,   0,   0)
 LEFT=1
 time=[SaoPaulo, Corinthians, Palmeiras, Santos]
 x=random.randint(0,3)
+pontos_times = [SaoPaulo.pontos, Corinthians.pontos, Santos.pontos, Palmeiras.pontos]     
+classificacao = sorted(pontos_times)
 
+def relaciona(classificacao):
+    pontostimes = []
+    for i in classificacao:
+        if SaoPaulo.nome not in pontostimes and SaoPaulo.pontos == i:
+            pontostimes.append(SaoPaulo.nome)
+        if Palmeiras.nome not in pontostimes and Palmeiras.pontos == i:
+            pontostimes.append(Palmeiras.nome)
+        if Corinthians.nome not in pontostimes and Corinthians.pontos == i:
+            pontostimes.append(Corinthians.nome)
+        if Santos.nome not in pontostimes and Santos.pontos == i:
+            pontostimes.append(Santos.nome)
+    return pontostimes
+        
+        
+        
+        
 def minuto(contador):
     minuto = int(contador/2)
     return minuto   
@@ -386,6 +378,29 @@ def tela2():
     font = pygame.font.SysFont(None, 30)
     text = font.render(str(time[x].jogadores[10].overall), True, WHITE)
     screen.blit(text, [420, 280])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[0]), True, BLACK)
+    screen.blit(text, [700, 400])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[0]), True, BLACK)
+    screen.blit(text, [560, 400])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[1]), True, BLACK)
+    screen.blit(text, [700, 350])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[1]), True, BLACK)
+    screen.blit(text, [560, 350])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[2]), True, BLACK)
+    screen.blit(text, [700, 300])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao_times[2]), True, BLACK)
+    screen.blit(text, [560, 300])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(classificacao[3]), True, BLACK)
+    screen.blit(text, [700, 250])
+    text = font.render(str(classificacao_times[3]), True, BLACK)
+    screen.blit(text, [560, 250])
     
     pygame.display.flip()
     
@@ -732,7 +747,6 @@ try:
             tela5(contador)
             contador += 1
         if contador == 180:
-            tela2()
             teladois = False
             telatres = True
             telainicial = False
@@ -740,6 +754,10 @@ try:
             telacinco = True
             contador = 0
             pontuacao(rodada)
+            pontos_times = [SaoPaulo.pontos, Corinthians.pontos, Santos.pontos, Palmeiras.pontos]
+            classificacao = sorted(pontos_times)
+            classificacao_times = relaciona(classificacao)
+            tela2()
             rodada += 1
 
         
@@ -748,10 +766,7 @@ try:
 finally:
     pygame.quit()
 
-print(rodada1[0][1].pontos)
-print(rodada1[0][0].pontos)
-print(rodada1[1][0].pontos)
-print(rodada1[1][1].pontos)
-            
-    
+print(classificacao_times)
+
+
      
