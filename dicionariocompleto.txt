@@ -1,0 +1,638 @@
+{
+	"jogadores": [{
+			"nome": "Tiago Volpi",
+			"ataque": 0,
+			"defesa": 85,
+			"overall": 42.5
+		},
+		{
+			"nome": "Hudson",
+			"ataque": 60,
+			"defesa": 60,
+			"overall": 60
+		},
+		{
+			"nome": "Arboleda",
+			"ataque": 20,
+			"defesa": 70,
+			"overall": 45
+		},
+		{
+			"nome": "Bruno Alves",
+			"ataque": 10,
+			"defesa": 60,
+			"overall": 35
+		},
+		{
+			"nome": "Reinaldo",
+			"ataque": 50,
+			"defesa": 50,
+			"overall": 50
+		},
+		{
+			"nome": "Liziero",
+			"ataque": 40,
+			"defesa": 55,
+			"overall": 47.5
+
+		},
+		{
+			"nome": "Tche Tche",
+			"ataque": 50,
+			"defesa": 50,
+			"overall": 50
+
+		},
+		{
+			"nome": "Everton",
+			"ataque": 55,
+			"defesa": 10,
+			"overall": 32.5
+
+		},
+		{
+			"nome": "Anthony",
+			"ataque": 70,
+			"defesa": 10,
+			"overall": 40
+
+		},
+		{
+			"nome": "Toro",
+			"ataque": 60,
+			"defesa": 5,
+			"overall": 32.5
+
+		},
+		{
+			"nome": "Pato",
+			"ataque": 80,
+			"defesa": 5,
+			"overall": 42.5
+
+		},
+
+		{
+			"nome": "Vanderlei",
+			"ataque": 5,
+			"defesa": 80,
+			"overall": 42.5
+
+		},
+		{
+			"nome": "Felipe Aguilar",
+			"ataque": 10,
+			"defesa": 70,
+			"overall": 40
+
+		},
+		{
+			"nome": "Lucas Verissimo",
+			"ataque": 5,
+			"defesa": 65,
+			"overall": 35
+
+		},
+		{
+			"nome": "Gustavo Henrique",
+			"ataque": 10,
+			"defesa": 70,
+			"overall": 40
+
+		},
+		{
+			"nome": "Victor Ferraz",
+			"ataque": 50,
+			"defesa": 40,
+			"overall": 45
+
+		},
+		{
+			"nome": "Diego Pituca",
+			"ataque": 50,
+			"defesa": 35,
+			"overall": 42.5
+
+		},
+		{
+			"nome": "Carlos Sanchez",
+			"ataque": 70,
+			"defesa": 40,
+			"overall": 55
+
+		},
+		{
+			"nome": "Jean Mota",
+			"ataque": 60,
+			"defesa": 30,
+			"overall": 45
+
+		},
+		{
+			"nome": "Jorge",
+			"ataque": 50,
+			"defesa": 40,
+			"overall": 45
+
+		},
+		{
+			"nome": "Soteldo",
+			"ataque": 60,
+			"defesa": 5,
+			"overall": 32.5
+
+		},
+		{
+			"nome": "Rodrygo",
+			"ataque": 70,
+			"defesa": 10,
+			"overall": 40
+
+		},
+		{
+			"nome": "Weverton",
+			"ataque": 0,
+			"defesa": 75,
+			"overall": 37.5
+
+		},
+		{
+			"nome": "Mayke",
+			"ataque": 40,
+			"defesa": 55,
+			"overall": 47.5
+
+		},
+		{
+			"nome": "Gustavo Gomez",
+			"ataque": 15,
+			"defesa": 75,
+			"overall": 45
+
+		},
+		{
+			"nome": "Luan",
+			"ataque": 10,
+			"defesa": 70,
+			"overall": 40
+
+		},
+		{
+			"nome": "Victor Luis",
+			"ataque": 40,
+			"defesa": 45,
+			"overall": 42.5
+
+		},
+		{
+			"nome": "Felipe Melo",
+			"ataque": 35,
+			"defesa": 65,
+			"overall": 50
+
+		},
+		{
+			"nome": "Bruno Henrique",
+			"ataque": 50,
+			"defesa": 50,
+			"overall": 50
+
+		},
+		{
+			"nome": "Ze Rafael",
+			"ataque": 55,
+			"defesa": 30,
+			"overall": 42.5
+
+		},
+		{
+			"nome": "Gustavo Scarpa",
+			"ataque": 70,
+			"defesa": 20,
+			"overall": 45
+
+		},
+		{
+			"nome": "Dudu",
+			"ataque": 80,
+			"defesa": 20,
+			"overall": 50
+
+		},
+		{
+			"nome": "Deyverson",
+			"ataque": 65,
+			"defesa": 10,
+			"overall": 37.5
+
+		},
+		{
+			"nome": "Cassio",
+			"ataque": 0,
+			"defesa": 80,
+			"overall": 40
+
+		},
+		{
+			"nome": "Fagner",
+			"ataque": 50,
+			"defesa": 50,
+			"overall": 50
+
+		},
+		{
+			"nome": "Henrique",
+			"ataque": 10,
+			"defesa": 60,
+			"overall": 35
+
+		},
+		{
+			"nome": "Manoel",
+			"ataque": 5,
+			"defesa": 55,
+			"overall": 30
+
+		},
+		{
+			"nome": "Danilo Avelar",
+			"ataque": 30,
+			"defesa": 30,
+			"overall": 30
+
+		},
+		{
+			"nome": "Ralf",
+			"ataque": 25,
+			"defesa": 55,
+			"overall": 40
+
+		},
+		{
+			"nome": "Richard",
+			"ataque": 30,
+			"defesa": 40,
+			"overall": 35
+
+		},
+		{
+			"nome": "Junior Sornoza",
+			"ataque": 55,
+			"defesa": 25,
+			"overall": 40
+
+		},
+		{
+			"nome": "Clayson",
+			"ataque": 50,
+			"defesa": 5,
+			"overall": 27.5
+
+		},
+		{
+			"nome": "Pedrinho",
+			"ataque": 55,
+			"defesa": 5,
+			"overall": 30
+
+		},
+		{
+			"nome": "Gustagol",
+			"ataque": 55,
+			"defesa": 5,
+			"overall": 30
+
+		},
+        {   "nome":"Victor",
+            "ataque": 0,
+            "defesa": 80,
+            "overall": 40
+        },
+        {   "nome":"Patric",
+            "ataque": 20,
+            "defesa": 35,
+            "overall": 27.5
+        },
+        {   "nome":"Rever",
+            "ataque": 15,
+            "defesa": 60,
+            "overall": 37.5
+        },
+        {    "nome":"Igor Rabello",
+            "ataque": 15,
+            "defesa": 55,
+            "overall": 35
+        },
+        {   "nome":"Fabio Santos",
+            "ataque": 20,
+            "defesa": 50,
+            "overall": 35
+        },
+        {   "nome":"Adilson",
+            "ataque": 30,
+            "defesa": 30,
+            "overall": 30
+        },
+        {   "nome":"Elias",
+            "ataque": 35,
+            "defesa": 40,
+            "overall": 37.5
+        },
+        {   "nome":"Cazares",
+            "ataque": 55,
+            "defesa": 15,
+            "overall": 35
+        },
+        {   "nome":"Luan",
+            "ataque": 55,
+            "defesa": 10,
+            "overall": 32.5
+        },
+        {   "nome":"Chara",
+            "ataque": 60,
+            "defesa": 5,
+            "overall": 32.5
+        },
+        {   "nome":"Ricardo Oliveira",
+            "ataque": 75,
+            "defesa": 5,
+            "overall": 40
+        },
+        {   "nome":"Fabio",
+            "ataque": 0,
+            "defesa": 80,
+            "overall": 40
+        },
+        {   "nome":"Edilson",
+            "ataque": 30,
+            "defesa": 30,
+            "overall": 30
+        },
+        {   "nome":"Dede",
+            "ataque": 20,
+            "defesa": 75,
+            "overall": 47.5
+        },
+        {   "nome":"Leo",
+            "ataque": 10,
+            "defesa": 60,
+            "overall": 35
+        },
+        {   "nome":"Egidio",
+            "ataque": 30,
+            "defesa": 25,
+            "overall": 27.5
+        },
+        {   "nome":"Henrique",
+            "ataque": 30,
+            "defesa": 35,
+            "overall": 32.5
+        },
+        {   "nome":"Lucas Romero",
+            "ataque": 25,
+            "defesa": 40,
+            "overall": 32.5
+        },
+        {   "nome":"Rodriguinho",
+            "ataque": 55,
+            "defesa": 25,
+            "overall": 40
+        },
+        {   "nome":"Thiago Neves",
+            "ataque": 60,
+            "defesa": 20,
+            "overall": 40
+        },
+        {   "nome":"Robinho",
+            "ataque": 40,
+            "defesa": 25,
+            "overall": 32.5
+        },
+        {   "nome":"Fred",
+            "ataque": 75,
+            "defesa": 5,
+            "overall": 40
+        },
+        {   "nome":"Marcelo Lomba",
+            "ataque": 0,
+            "defesa": 70,
+            "overall": 35
+        },
+        {   "nome":"Zeca",
+            "ataque": 35,
+            "defesa": 40,
+            "overall": 37.5
+        },
+        {   "nome":"Rodrigo Moledo",
+            "ataque": 15,
+            "defesa": 55,
+            "overall": 35
+        },
+        {   "nome":"Victor Cuesta",
+            "ataque": 30,
+            "defesa": 35,
+            "overall": 32.5
+        },
+        {   "nome":"Iago",
+            "ataque": 25,
+            "defesa": 35,
+            "overall": 30
+        },
+        {   "nome":"Rodrigo Dourado",
+            "ataque": 30,
+            "defesa": 40,
+            "overall": 35
+        },
+        {   "nome":"Edenilson",
+            "ataque": 25,
+            "defesa": 35,
+            "overall": 30
+        },
+        {   "nome":"Patrick",
+            "ataque": 25,
+            "defesa": 40,
+            "overall": 32.5
+        },
+        {   "nome":"Dalessandro",
+            "ataque": 70,
+            "defesa": 20,
+            "overall": 45
+        },
+        {   "nome":"Nico Lopez",
+            "ataque": 60,
+            "defesa": 5,
+            "overall": 32.5
+        },
+        {   "nome":"Paolo Guerrero",
+            "ataque": 70,
+            "defesa": 10,
+            "overall": 40
+        },
+        {   "nome":"Paulo Victor",
+            "ataque": 5,
+            "defesa": 70,
+            "overall": 37.5
+        },
+        {   "nome":"Leo Gomes",
+            "ataque": 25,
+            "defesa": 30,
+            "overall": 27.5
+        },
+        {   "nome":"Geromel",
+            "ataque": 10,
+            "defesa": 75,
+            "overall": 42.5
+        },
+        {   "nome":"Kannemann",
+            "ataque": 15,
+            "defesa": 75,
+            "overall": 45
+        },
+        {   "nome":"Cortez",
+            "ataque": 30,
+            "defesa": 25,
+            "overall": 27.5
+        },
+        {   "nome":"Maicon",
+            "ataque": 35,
+            "defesa": 30,
+            "overall": 32.5
+        },
+        {   "nome":"Matheus Henrique",
+            "ataque": 40,
+            "defesa": 30,
+            "overall": 35
+        },
+        {   "nome":"Jean Pyerre",
+            "ataque": 55,
+            "defesa": 25,
+            "overall": 35
+        },
+        {   "nome":"Diego Tardelli",
+            "ataque": 60,
+            "defesa": 10,
+            "overall": 35
+        },
+        {   "nome":"Everton",
+            "ataque": 65,
+            "defesa": 10,
+            "overall": 37.5
+        },
+        {   "nome":"Andre",
+            "ataque": 55,
+            "defesa": 10,
+            "overall": 32.5
+        },
+        {   "nome":"Jordi",
+            "ataque": 5,
+            "defesa": 45,
+            "overall": 25
+        },
+        {   "nome":"Apodi",
+            "ataque": 30,
+            "defesa": 25,
+            "overall": 27.5
+        },
+        {   "nome":"Gerson",
+            "ataque": 5,
+            "defesa": 40,
+            "overall": 22.5
+        },
+        {   "nome":"Thiago Silva",
+            "ataque": 20,
+            "defesa": 75,
+            "overall": 47.5
+        },
+        {   "nome":"Carlinhos",
+            "ataque": 25,
+            "defesa": 30,
+            "overall": 27.5
+        },
+        {   "nome":"Naldo",
+            "ataque": 20,
+            "defesa": 30,
+            "overall": 25
+        },
+        {   "nome":"Nilton",
+            "ataque": 20,
+            "defesa": 30,
+            "overall": 25
+        },
+        {   "nome":"Didira",
+            "ataque": 35,
+            "defesa": 15,
+            "overall": 20
+        },
+        {   "nome":"Madson",
+            "ataque": 40,
+            "defesa": 10,
+            "overall": 25
+        },
+        {   "nome":"Matheus Savio",
+            "ataque": 40,
+            "defesa": 15,
+            "overall": 27.5
+        },
+        {   "nome":"Makelele Prime",
+            "ataque": 100,
+            "defesa": 100,
+            "overall": 100
+        },
+        {   "nome":"Marcelo Boeck",
+            "ataque": 5,
+            "defesa": 40,
+            "overall": 22.5
+        },
+        {   "nome":"Araruna",
+            "ataque": 30,
+            "defesa": 30,
+            "overall": 30
+        },
+        {   "nome":"Quintero",
+            "ataque": 10,
+            "defesa": 35,
+            "overall": 22.5
+        },
+        {   "nome":"Sergio Ramos",
+            "ataque": 25,
+            "defesa": 80,
+            "overall": 52.5
+        },
+        {   "nome":"Carlinhos",
+            "ataque": 20,
+            "defesa": 30,
+            "overall": 25
+        },
+        {   "nome":"Paulo Roberto",
+            "ataque": 25,
+            "defesa": 30,
+            "overall": 27.5
+        },
+        {   "nome":"Felipe",
+            "ataque": 30,
+            "defesa": 20,
+            "overall": 25
+        },
+        {   "nome":"Edinho",
+            "ataque": 25,
+            "defesa": 30,
+            "overall": 27.5
+        },
+        {   "nome":"Dodo",
+            "ataque": 40,
+            "defesa": 10,
+            "overall": 25
+        },
+        {   "nome":"Osvaldo",
+            "ataque": 45,
+            "defesa": 10,
+            "overall": 27.5
+        },
+        {   "nome":"Shalimov",
+            "ataque": 95,
+            "defesa": 95,
+            "overall": 95
+        }
+        
+	]
+}
