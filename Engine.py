@@ -716,13 +716,17 @@ try:
                     telatres = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (280,560) and event.pos >=(180,500):
                     time[x].ataque += 15
-                    time[x].defesa = 0
+                    time[x].defesa -= 0
+                    print(time[x].ataque)
+                    print(time[x].defesa)
                     telainicial = False
                     teladois = True
                     telatres = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (460,560) and event.pos >=(360,500):
                     time[x].ataque -= 10
                     time[x].defesa += 60
+                    print(time[x].ataque)
+                    print(time[x].defesa)
                     telainicial = False
                     teladois = True
                     telatres = False
