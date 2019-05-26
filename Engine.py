@@ -23,18 +23,33 @@ for jogador in lista_jogadores:
     jogadores.append(novo_jogador)
     
     
-SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0,0)
-Santos = Time(jogadores[11:22], "Santos", 0,0)
-Palmeiras = Time(jogadores[22:33], "Palmeiras", 0,0)
-Corinthians = Time(jogadores[33:44], "Corinthians", 0,0)
-AtleticoMG = Time(jogadores[44:55], "Atletico MG", 0,0)
-Cruzeiro = Time(jogadores[55:66], "Cruzeiro", 0,0)
-Internacional = Time(jogadores[66:77], "Internacional", 0,0)
-Gremio = Time(jogadores[77:88], "Gremio", 0,0)
-CSA = Time(jogadores[88:99], "CSA", 0,0)
-Fortaleza = Time(jogadores[99:110], "Fortaleza", 0,0)
+SaoPaulo = Time(jogadores[0:11], "Sao Paulo", 0,0,0,0)
+Santos = Time(jogadores[11:22], "Santos", 0,0,0,0)
+Palmeiras = Time(jogadores[22:33], "Palmeiras", 0,0,0,0)
+Corinthians = Time(jogadores[33:44], "Corinthians", 0,0,0,0)
+AtleticoMG = Time(jogadores[44:55], "Atletico MG", 0,0,0,0)
+Cruzeiro = Time(jogadores[55:66], "Cruzeiro", 0,0,0,0)
+Internacional = Time(jogadores[66:77], "Internacional", 0,0,0,0)
+Gremio = Time(jogadores[77:88], "Gremio", 0,0,0,0)
+CSA = Time(jogadores[88:99], "CSA", 0,0,0,0)
+Fortaleza = Time(jogadores[99:110], "Fortaleza", 0,0,0,0)
 
 time=[SaoPaulo, Corinthians, Palmeiras, Santos, AtleticoMG, Internacional, Cruzeiro, CSA, Fortaleza, Gremio]
+def calcula_ataque_defesa(time):
+    ataques = []
+    defesas = []
+    for i in time:
+        i.ataque = i.calcula_ataque()
+        ataques.append(i.ataque)
+        i.defesa = i.calcula_defesa()
+        defesas.append(i.defesa)
+    return ataques, defesas
+calcula_ataque_defesa(time)
+print(calcula_ataque_defesa(time))
+
+ataques_iniciais = [495, 365, 460, 440, 380, 385, 375, 340, 350, 395] 
+defesas_iniciais = [460, 410, 515, 485, 385, 385, 420, 415, 410, 390]
+
 
 
 def cria_lista_rodadas(time):
@@ -57,10 +72,10 @@ def cria_lista_rodadas(time):
 
 def minuto_partida(time1, time2, contador):
     if contador % FPS == 0:
-        if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) > time1.calcula_ataque():
+        if random.randint(0, (time1.ataque+time2.defesa)) > time1.ataque:
             if random.randint(1,15)> 12:
                 time1.gol += 1
-        if random.randint(0, (time1.calcula_ataque()+time2.calcula_defesa())) <= time1.calcula_ataque():
+        if random.randint(0, (time1.ataque+time2.defesa)) <= time1.ataque:
             if random.randint(1,15)> 12:
                 time2.gol += 1            
     return time1.gol,     time2.gol
@@ -182,10 +197,7 @@ def relaciona(classificacao):
     return pontostimes
         
 classificacao_times = relaciona(classificacao)
-print(classificacao_times)
-print(classificacao)
-print(classificacao[4])
-print(str(classificacao[4]))
+
 
         
         
@@ -244,13 +256,15 @@ def tela1():
         
 def tela2(classificacao, classificacao_times):    
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
-    pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))
-    pygame.draw.rect(screen, GREEN,pygame.Rect(550, 500, 200, 80) )   
+    pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))   
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
     pygame.draw.rect(screen, BLUE3,pygame.Rect(550, 50, 200, 50) )   
     pygame.draw.rect(screen, BLUE4,pygame.Rect(550, 150, 200, 300) )   
     pygame.draw.rect(screen, BLACK,pygame.Rect(0, 0, 800, 30) )   
     pygame.draw.rect(screen, BLUE1,pygame.Rect(550, 150, 200, 300) ) 
+    pygame.draw.rect(screen, GREEN,pygame.Rect(10, 500, 100, 60) )
+    pygame.draw.rect(screen, GREEN,pygame.Rect(180, 500, 100, 60) )
+    pygame.draw.rect(screen, GREEN,pygame.Rect(360, 500, 100, 60) )
 
     font = pygame.font.SysFont(None, 40)
     text = font.render(str(time[x].nome), True, WHITE)
@@ -495,13 +509,28 @@ def tela2(classificacao, classificacao_times):
     text = font.render(str(classificacao_times[9]), True, BLACK)
     screen.blit(text, [560, 160])
 
-
+    pygame.draw.rect(screen, GREEN,pygame.Rect(10, 500, 100, 60) )
+    pygame.draw.rect(screen, GREEN,pygame.Rect(180, 500, 100, 60) )
+    pygame.draw.rect(screen, GREEN,pygame.Rect(360, 500, 100, 60) )
     
+    font = pygame.font.SysFont(None, 50)
+    text = font.render("4-4-2", True, WHITE)
+    screen.blit(text, [180, 510])
+    pygame.display.flip()
     
+    font = pygame.font.SysFont(None, 50)
+    text = font.render("4-5-1", True, WHITE)
+    screen.blit(text, [360, 510])
+    pygame.display.flip()
   
     font = pygame.font.SysFont(None, 50)
-    text = font.render("JOGAR", True, WHITE)
-    screen.blit(text, [590, 520])
+    text = font.render("4-3-3", True, WHITE)
+    screen.blit(text, [10, 510])
+    pygame.display.flip()
+    
+    font = pygame.font.SysFont(None, 30)
+    text = font.render("Clique na formacao escolhida para iniciar o jogo", True, WHITE)
+    screen.blit(text, [10, 450])
     pygame.display.flip()
     
 
@@ -648,7 +677,8 @@ telacinco = True
 telafinal=True
 clock = pygame.time.Clock()
 contador = 0
-
+print(calcula_ataque_defesa(time))
+escolha_tatica = True
 try:
     
     # Loop principal.
@@ -659,21 +689,44 @@ try:
         clock.tick(FPS)
         if telainicial == True:
             tela1()
+            
         
         # Processa os eventos (mouse, teclado, botão, etc).
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
                 telainicial = False
                 teladois = False
-            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (750,600) and event.pos >=(500,580):
-                telainicial = False
-                teladois = True
-                telatres = False
+                print(time[x].ataque)
+                print(time[x].defesa)
+
+                
             # Verifica se foi fechado
             if event.type == pygame.QUIT:
                 running = False
         if teladois == False:
             tela2(classificacao, classificacao_times)
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (110,560) and event.pos >=(10,500):
+                    time[x].ataque += 50
+                    time[x].defesa -= 30
+                    print(time[x].ataque)
+                    print(time[x].defesa)
+                    telainicial = False
+                    teladois = True
+                    telatres = False
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (280,560) and event.pos >=(180,500):
+                    time[x].ataque += 15
+                    time[x].defesa = 0
+                    telainicial = False
+                    teladois = True
+                    telatres = False
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (460,560) and event.pos >=(360,500):
+                    time[x].ataque -= 10
+                    time[x].defesa += 60
+                    telainicial = False
+                    teladois = True
+                    telatres = False
+                    
         if telatres == False:
             tela3(todas_rodadas, rodada, contador)
             contador += 1
@@ -688,9 +741,13 @@ try:
             pontuacao(rodada)
             pontos_times = [SaoPaulo.pontos, Corinthians.pontos, Santos.pontos, Palmeiras.pontos, Gremio.pontos, Internacional.pontos, AtleticoMG.pontos, Cruzeiro.pontos, Fortaleza.pontos, CSA.pontos]     
             classificacao = sorted(pontos_times)
-            print(classificacao)
+            time[x].ataque = ataques_iniciais[x]
+            time[x].defesa = defesas_iniciais[x]
+            print(time[x].ataque)
+            print(time[x].defesa)
             classificacao_times = relaciona(classificacao)
             tela2(classificacao, classificacao_times)
+            
             rodada += 1
             if rodada ==5: 
                 telafinal=False
