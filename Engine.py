@@ -51,7 +51,6 @@ ataques_iniciais = [495, 365, 460, 440, 380, 385, 375, 340, 350, 395]
 defesas_iniciais = [460, 410, 515, 485, 385, 385, 420, 415, 410, 390]
 
 
-
 def cria_lista_rodadas(time):
     items = list(time)
     if len(items) % 2 != 0:
@@ -677,7 +676,6 @@ telacinco = True
 telafinal=True
 clock = pygame.time.Clock()
 contador = 0
-print(calcula_ataque_defesa(time))
 escolha_tatica = True
 try:
     
@@ -742,6 +740,13 @@ try:
             telatres = True
             telainicial = False
             contador = 0
+            N = random.randint(0,10)
+            M = random.randint(0,10)
+            O = random.randint(0,9)
+            troca_1 = time[x].jogadores[N]
+            troca_2 = time[O].jogadores[M]
+            time[x].jogadores[N] = troca_2
+            time[O].jogadores[M] = troca_1
             pontuacao(rodada)
             pontos_times = [SaoPaulo.pontos, Corinthians.pontos, Santos.pontos, Palmeiras.pontos, Gremio.pontos, Internacional.pontos, AtleticoMG.pontos, Cruzeiro.pontos, Fortaleza.pontos, CSA.pontos]     
             classificacao = sorted(pontos_times)
