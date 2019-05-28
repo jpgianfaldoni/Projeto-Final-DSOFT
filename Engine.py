@@ -237,7 +237,7 @@ def tela1():
     text = font.render('INICIAR', True, WHITE)    
     screen.blit(text, [335, 520])
     pygame.display.flip()
-    text = font.render('Pedro', True, BLACK)    
+    text = font.render('Player1', True, BLACK)    
     screen.blit(text, [120, 114])
     pygame.display.flip()
    
