@@ -695,7 +695,7 @@ try:
         
         # Processa os eventos (mouse, teclado, botão, etc).
         for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and telainicial == True:
                 telainicial = False
                 teladois = False
 
@@ -728,6 +728,7 @@ try:
                     
         if telatres == False:
             tela3(todas_rodadas, rodada, contador)
+            teladois = True
             contador += 1
         if telafinal ==False:
             print(classificacao_times)
