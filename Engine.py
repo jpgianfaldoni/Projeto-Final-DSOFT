@@ -573,7 +573,10 @@ def tela3(todas_rodadas, rodada, contador):
     text = font.render("X", True, GREEN)
     screen.blit(text, [263, 15])
     screen.blit(text, [263, 55])
-    
+    screen.blit(text, [263, 95])
+    screen.blit(text, [263, 135])
+    screen.blit(text, [263, 175])
+   
     
     font = pygame.font.SysFont(None, 50)
     text = font.render(str(minuto(contador)), True, WHITE)
