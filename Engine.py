@@ -229,7 +229,7 @@ def tela1():
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 220, 400, 60) )   
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 340, 400, 60) )   
-    pygame.display.flip()
+
 
     
     #textos
@@ -730,6 +730,7 @@ try:
             tela3(todas_rodadas, rodada, contador)
             contador += 1
         if telafinal ==False:
+            print(classificacao_times)
             telaFINAL()
             
         if contador == 180:
