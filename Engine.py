@@ -45,7 +45,6 @@ def calcula_ataque_defesa(time):
         defesas.append(i.defesa)
     return ataques, defesas
 calcula_ataque_defesa(time)
-print(calcula_ataque_defesa(time))
 
 ataques_iniciais = [495, 365, 460, 440, 380, 385, 375, 340, 350, 395] 
 defesas_iniciais = [460, 410, 515, 485, 385, 385, 420, 415, 410, 390]
@@ -90,30 +89,30 @@ def pontuacao(rodada):
         rodadas[rodada][0][1].pontos +=1
     if rodadas[rodada][1][1].gol > rodadas[rodada][1][0].gol:
         rodadas[rodada][1][1].pontos += 3
-    if rodadas[rodada][1][0].gol > rodada1[1][1].gol:
+    if rodadas[rodada][1][0].gol > rodadas[rodada][1][1].gol:
         rodadas[rodada][1][0].pontos += 3
-    if rodadas[rodada][1][0].gol == rodada1[1][1].gol:
+    if rodadas[rodada][1][0].gol == rodadas[rodada][1][1].gol:
         rodadas[rodada][1][0].pontos +=1
         rodadas[rodada][1][1].pontos +=1
-    if rodadas[rodada][2][1].gol > rodadas[rodada][1][0].gol:
+    if rodadas[rodada][2][1].gol > rodadas[rodada][2][0].gol:
         rodadas[rodada][2][1].pontos += 3
-    if rodadas[rodada][2][0].gol > rodada1[1][1].gol:
+    if rodadas[rodada][2][0].gol > rodadas[rodada][2][1].gol:
         rodadas[rodada][2][0].pontos += 3
-    if rodadas[rodada][2][0].gol == rodada1[1][1].gol:
+    if rodadas[rodada][2][0].gol == rodadas[rodada][2][1].gol:
         rodadas[rodada][2][0].pontos +=1
         rodadas[rodada][2][1].pontos +=1
-    if rodadas[rodada][3][1].gol > rodadas[rodada][1][0].gol:
+    if rodadas[rodada][3][1].gol > rodadas[rodada][3][0].gol:
         rodadas[rodada][3][1].pontos += 3
-    if rodadas[rodada][3][0].gol > rodada1[1][1].gol:
+    if rodadas[rodada][3][0].gol > rodadas[rodada][3][1].gol:
         rodadas[rodada][3][0].pontos += 3
-    if rodadas[rodada][3][0].gol == rodada1[1][1].gol:
+    if rodadas[rodada][3][0].gol == rodadas[rodada][3][1].gol:
         rodadas[rodada][3][0].pontos +=1
         rodadas[rodada][3][1].pontos +=1
-    if rodadas[rodada][4][1].gol > rodadas[rodada][1][0].gol:
+    if rodadas[rodada][4][1].gol > rodadas[rodada][4][0].gol:
         rodadas[rodada][4][1].pontos += 3
-    if rodadas[rodada][4][0].gol > rodada1[1][1].gol:
+    if rodadas[rodada][4][0].gol > rodadas[rodada][4][1].gol:
         rodadas[rodada][4][0].pontos += 3
-    if rodadas[rodada][4][0].gol == rodada1[1][1].gol:
+    if rodadas[rodada][4][0].gol == rodadas[rodada][4][1].gol:
         rodadas[rodada][4][0].pontos +=1
         rodadas[rodada][4][1].pontos +=1
 
@@ -531,6 +530,8 @@ def tela2(classificacao, classificacao_times):
     text = font.render("Clique na formacao escolhida para iniciar o jogo", True, WHITE)
     screen.blit(text, [10, 450])
     pygame.display.flip()
+
+        
     
 
 def tela3(todas_rodadas, rodada, contador):
@@ -694,8 +695,7 @@ try:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (500,580) and event.pos >=(300,500) and teladois == True:
                 telainicial = False
                 teladois = False
-                print(time[x].ataque)
-                print(time[x].defesa)
+
 
                 
             # Verifica se foi fechado
@@ -707,24 +707,18 @@ try:
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (110,560) and event.pos >=(10,500):
                     time[x].ataque += 50
                     time[x].defesa -= 30
-                    print(time[x].ataque)
-                    print(time[x].defesa)
                     telainicial = False
                     teladois = True
                     telatres = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (280,560) and event.pos >=(180,500):
                     time[x].ataque += 15
                     time[x].defesa -= 0
-                    print(time[x].ataque)
-                    print(time[x].defesa)
                     telainicial = False
                     teladois = True
                     telatres = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == LEFT and event.pos <= (460,560) and event.pos >=(360,500):
                     time[x].ataque -= 10
                     time[x].defesa += 60
-                    print(time[x].ataque)
-                    print(time[x].defesa)
                     telainicial = False
                     teladois = True
                     telatres = False
@@ -752,8 +746,6 @@ try:
             classificacao = sorted(pontos_times)
             time[x].ataque = ataques_iniciais[x]
             time[x].defesa = defesas_iniciais[x]
-            print(time[x].ataque)
-            print(time[x].defesa)
             classificacao_times = relaciona(classificacao)
             tela2(classificacao, classificacao_times)
             
