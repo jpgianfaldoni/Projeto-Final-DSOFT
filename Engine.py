@@ -664,10 +664,10 @@ def telaFINAL():
     text = font.render(str(classificacao_times[9]), True, BLACK)
     screen.blit(text, [460, 250])
     font=pygame.font.SysFont(None, 60)
-    text = font.render("CAMPEAO - {}".format(classificacao_times[3]), True, GREEN)
+    text = font.render("CAMPEAO - {}".format(classificacao_times[9]), True, GREEN)
     screen.blit(text, [120, 100])
     font=pygame.font.SysFont(None, 20)
-    text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[2]), True, BLACK)
+    text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[8]), True, BLACK)
     screen.blit(text, [123, 140])
     pygame.display.flip()
     
