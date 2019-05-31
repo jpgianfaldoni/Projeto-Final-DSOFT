@@ -1,5 +1,13 @@
 # InsperFootballManager
 
-Jogo estilo "Football manager" desenvolvido em Python cujo objetivo é adquirir o(s) Makelele Prime(s) e tornar seu time campeão.
+Jogo estilo "Football manager" desenvolvido em Python, com 10 times da série A do Brasil, no qual seu time é sorteado no início.
+
+Como jogar:
+  
+  - Use o mouse para clicar nos botões.
+  - Para mudar de formação, clique na desejada.
+
+  Imagens:
+  
 
 ![Alt text](https://raw.githubusercontent.com/jpgianfaldoni/Projeto-Final-DSOFT/master/TELA1.png)
