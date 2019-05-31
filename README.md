@@ -11,3 +11,12 @@ Como jogar:
   
 
 ![Alt text](https://raw.githubusercontent.com/jpgianfaldoni/Projeto-Final-DSOFT/master/TELA1.png)
+
+![Alt text](https://raw.githubusercontent.com/jpgianfaldoni/Projeto-Final-DSOFT/master/TELA2.png)
+
+![Alt text](https://raw.githubusercontent.com/jpgianfaldoni/Projeto-Final-DSOFT/master/TELA3.png)
+
+![Alt text](https://raw.githubusercontent.com/jpgianfaldoni/Projeto-Final-DSOFT/master/TELA4.png)
+
+
+
