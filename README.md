@@ -7,4 +7,8 @@ Como jogar:
   - Use o mouse para clicar nos botões.
   - Para mudar de formação, clique na desejada.
   
+  Imagens:
+  
+  
+  
   
