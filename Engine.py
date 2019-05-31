@@ -166,8 +166,9 @@ rodada8 = lista_rodadas[7]
 rodada9 = lista_rodadas[8]
 todas_rodadas = [rodada1, rodada2, rodada3, rodada4, rodada5, rodada6, rodada7, rodada8, rodada9]
 rodada = 0
+pygame.mixer.music.load('torcida.mp3')
 
-
+pygame.mixer.music.set_volume(10)
 def relaciona(classificacao):
     pontostimes = []
     for i in classificacao:
@@ -252,7 +253,8 @@ def tela1():
     pygame.display.flip()
     pygame.display.flip()
         
-def tela2(classificacao, classificacao_times):    
+def tela2(classificacao, classificacao_times):   
+    pygame.mixer.music.play()
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE, pygame.Rect(500, 0, 600, 800))   
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 500, 600))
@@ -531,50 +533,18 @@ def tela2(classificacao, classificacao_times):
     screen.blit(text, [10, 450])
     pygame.display.flip()
     
-#    if str(time[x].nome)=="Sao Paulo":
-#        image = pygame.image.load((todas_rodadas[rodada][0][0].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Cruzeiro":
-#        image = pygame.image.load((todas_rodadas[rodada][0][1].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="CSA":
-#        image = pygame.image.load((todas_rodadas[rodada][1][0].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Internacional":
-#        image = pygame.image.load((todas_rodadas[rodada][1][1].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Fortaleza":
-#        image = pygame.image.load((todas_rodadas[rodada][2][0].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="AtleticoMG":
-#        image = pygame.image.load((todas_rodadas[rodada][2][1].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Gremio":
-#        image = pygame.image.load((todas_rodadas[rodada][3][0].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Santos":
-#        image = pygame.image.load((time[x].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Corinthians":
-#        image = pygame.image.load((todas_rodadas[rodada][4][0].escudo))
-#        screen.blit(image, [630, 60])
-#        pygame.display.flip()  
-#    if str(time[x].nome)=="Palmeiras":
+
     image = pygame.image.load((time[x].escudo))
     screen.blit(image, [630, 60])
     pygame.display.flip()  
-        
+ 
 
+    
 
 def tela3(todas_rodadas, rodada, contador):
+    
+
+    
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
     pygame.draw.rect(screen, WHITE,pygame.Rect(10, 9, 240, 30))   
     pygame.draw.rect(screen, WHITE,pygame.Rect(300, 9, 250, 30)) 
@@ -678,13 +648,16 @@ def tela3(todas_rodadas, rodada, contador):
     text = font.render(str(minuto_partida(todas_rodadas[rodada][4][0], todas_rodadas[rodada][4][1], contador)), True, GREEN)
     screen.blit(text, [245, 170])
     
-  
+
     pygame.display.flip()
     
     
     
 
 def telaFINAL():
+    pygame.mixer.music.load('torcida.mp3')
+    pygame.mixer.music.play()
+    pygame.mixer.music.set_volume(10)
     screen.fill(BLUE4)
     pygame.draw.rect(screen, WHITE,pygame.Rect(100, 80, 600, 400)) 
     font = pygame.font.SysFont(None, 30)
