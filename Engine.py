@@ -204,7 +204,7 @@ def minuto(contador):
     minuto = int(contador/2)
     return minuto   
         
-        
+      
 def tela1():
         
     pygame.mouse.set_visible(True)
