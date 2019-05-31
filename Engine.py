@@ -530,9 +530,49 @@ def tela2(classificacao, classificacao_times):
     text = font.render("Clique na formacao escolhida para iniciar o jogo", True, WHITE)
     screen.blit(text, [10, 450])
     pygame.display.flip()
-
-        
     
+    if str(time[x].nome)=="Sao Paulo":
+        image = pygame.image.load((todas_rodadas[rodada][0][0].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Cruzeiro":
+        image = pygame.image.load((todas_rodadas[rodada][0][1].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="CSA":
+        image = pygame.image.load((todas_rodadas[rodada][1][0].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Internacional":
+        image = pygame.image.load((todas_rodadas[rodada][1][1].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Fortaleza":
+        image = pygame.image.load((todas_rodadas[rodada][2][0].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="AtleticoMG":
+        image = pygame.image.load((todas_rodadas[rodada][2][1].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Gremio":
+        image = pygame.image.load((todas_rodadas[rodada][3][0].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Santos":
+        image = pygame.image.load((todas_rodadas[rodada][3][1].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Corinthians":
+        image = pygame.image.load((todas_rodadas[rodada][4][0].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+    if str(time[x].nome)=="Palmeiras":
+        image = pygame.image.load((todas_rodadas[rodada][4][1].escudo))
+        screen.blit(image, [640, 60])
+        pygame.display.flip()  
+        
+
 
 def tela3(todas_rodadas, rodada, contador):
     pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
