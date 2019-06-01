@@ -564,7 +564,9 @@ def tela3(todas_rodadas, rodada, contador):
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 170, 60, 30))
 
     pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
-    pygame.draw.rect(screen, BLACK,pygame.Rect(600, 100, 160, 140))
+    image = pygame.image.load("Campo1.png")
+    screen.blit(image, ([-125, 300]))
+    pygame.display.flip() 
     
     font = pygame.font.SysFont(None, 25)
     text = font.render("X", True, GREEN)
@@ -655,9 +657,7 @@ def tela3(todas_rodadas, rodada, contador):
     
 
 def telaFINAL():
-    pygame.mixer.music.load('torcida.mp3')
-    pygame.mixer.music.play()
-    pygame.mixer.music.set_volume(10)
+
     screen.fill(BLUE4)
     pygame.draw.rect(screen, WHITE,pygame.Rect(100, 80, 600, 400)) 
     font = pygame.font.SysFont(None, 30)
