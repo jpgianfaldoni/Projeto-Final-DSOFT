@@ -139,7 +139,7 @@ def pontuacao(rodada):
 FPS = 20
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
-pygame.display.set_caption("ELIFOOT")
+pygame.display.set_caption("Insper Football Manager")
 done=False
 BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255)
