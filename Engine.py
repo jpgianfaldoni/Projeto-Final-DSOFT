@@ -240,20 +240,20 @@ def tela1():
 
 
     pygame.draw.rect(screen, BLACK,pygame.Rect(400, 0, 400, 100) )   
-
+    pygame.draw.rect(screen, BLACK,pygame.Rect(530, 300, 200, 200) )   
    
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 100, 400, 60) )   
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(0, 220, 400, 60) )   
     
-    pygame.draw.rect(screen, WHITE,pygame.Rect(0, 340, 400, 60) )   
+  
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 100, 400, 60) )   
     
     pygame.draw.rect(screen, WHITE,pygame.Rect(400, 220, 400, 60) )   
     
-    pygame.draw.rect(screen, WHITE,pygame.Rect(400, 340, 400, 60) )   
+  
 
 
     
@@ -265,18 +265,32 @@ def tela1():
     text = font.render('Player1', True, BLACK)    
     screen.blit(text, [120, 114])
     pygame.display.flip()
+    text = font.render('TIME', True, WHITE)    
+    screen.blit(text, [500, 50])
+    pygame.display.flip()
+    text = font.render(str(time[x].nome), True, BLACK)    
+    screen.blit(text, [500, 120])
    
     text = font.render('PLAYER', True, WHITE)    
     screen.blit(text, [100, 50])
     pygame.display.flip()
-    
-    text = font.render('TIME', True, WHITE)    
-    screen.blit(text, [500, 50])
-    text = font.render(str(time[x].nome), True, BLACK)    
-    screen.blit(text, [500, 120])
+    font = pygame.font.SysFont(None, 50)
+    text = font.render("INSPER", True, WHITE)
+    screen.blit(text, [100, 340])
+    text = font.render("FOOTBALL MANAGER", True, WHITE)
+    screen.blit(text, [100, 380])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render("AUTORES", True, WHITE)
+    screen.blit(text, [540, 340])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render("Pedro Carani", True, WHITE)
+    screen.blit(text, [540, 380])
+    text = font.render("Gianluca Giudici", True, WHITE)
+    screen.blit(text, [540, 410])
+    text = font.render("Joao Andrade", True, WHITE)
+    screen.blit(text, [540, 440])
     pygame.display.flip()
-    pygame.display.flip()
-        
+
 def tela2(classificacao, classificacao_times):   
     pygame.mixer.music.play()
     pygame.draw.rect(screen, BLACK, pygame.Rect(0, 0, 800, 600))
@@ -586,7 +600,7 @@ def tela3(todas_rodadas, rodada, contador):
             
         pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
         image = pygame.image.load("Campo1.png")
-        screen.blit(image, ([-125, 300]))
+        screen.blit(image, ([-145, 300]))
         font = pygame.font.SysFont(None, 35)
         text = font.render(str(todas_rodadas[rodada][0][0].nome), True, BLACK)
         screen.blit(text, [20, 9])
