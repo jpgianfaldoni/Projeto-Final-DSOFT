@@ -579,11 +579,9 @@ def tela2(classificacao, classificacao_times):
 
     
 
-def tela3(todas_rodadas, rodada, contador):
+def tela3(todas_rodadas, rodada, contador,scores):
     
     if contador == 0:
-    
-    
         pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
         pygame.draw.rect(screen, WHITE,pygame.Rect(10, 9, 240, 30))   
         pygame.draw.rect(screen, WHITE,pygame.Rect(300, 9, 250, 30)) 
@@ -652,23 +650,27 @@ def tela3(todas_rodadas, rodada, contador):
         image = pygame.image.load((todas_rodadas[rodada][4][1].escudo))
         screen.blit(image, [310, 170])
         font = pygame.font.SysFont(None, 30)
-        
-    if rodada > 0 and contador == 0:
-        a = gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time)
-        if len(a) < 3:
-            a.append("")
-        font = pygame.font.SysFont(None, 30)
-        text = font.render(str(a[0]), True, GREEN)
-        screen.blit(text, [25, 220])
-        pygame.display.flip() 
-        text = font.render(str(a[1]), True, GREEN)
-        screen.blit(text, [25, 250])
-        pygame.display.flip() 
-        text = font.render(str(a[2]), True, GREEN)
-        screen.blit(text, [25, 280])
-        pygame.display.flip() 
-        
-        
+    if rodada > 0 and contador == 0 :
+        if len(scores) < 3:
+            font = pygame.font.SysFont(None, 30)
+            text = font.render(str(scores[0]), True, GREEN)
+            screen.blit(text, [25, 220])
+            pygame.display.flip() 
+            text = font.render(str(scores[1]), True, GREEN)
+            screen.blit(text, [25, 250])
+            pygame.display.flip() 
+        else:
+            font = pygame.font.SysFont(None, 30)
+            text = font.render(str(scores[0]), True, GREEN)
+            screen.blit(text, [25, 220])
+            pygame.display.flip() 
+            text = font.render(str(scores[1]), True, GREEN)
+            screen.blit(text, [25, 250])
+            pygame.display.flip()
+            text = font.render(str(scores[2]), True, GREEN)
+            screen.blit(text, [25, 280])
+        pygame.display.flip()
+
         
         
         
@@ -720,7 +722,7 @@ def tela3(todas_rodadas, rodada, contador):
     
     
 
-def telaFINAL():
+def telaFINAL(scores):
 
     screen.fill(BLUE4)
     pygame.draw.rect(screen, WHITE,pygame.Rect(100, 80, 600, 400)) 
@@ -759,13 +761,13 @@ def telaFINAL():
     text = font.render("Artilheiros:", True, BLACK)
     screen.blit(text, [40, 220])
     font = pygame.font.SysFont(None, 30)
-    text = font.render(str(a[0]), True, WHITE)
+    text = font.render(str(scores[0]), True, WHITE)
     screen.blit(text, [40, 250])
     pygame.display.flip() 
-    text = font.render(str(a[1]), True, WHITE)
+    text = font.render(str(scores[1]), True, WHITE)
     screen.blit(text, [40, 280])
     pygame.display.flip() 
-    text = font.render(str(a[2]), True, WHITE)
+    text = font.render(str(scores[2]), True, WHITE)
     screen.blit(text, [40, 310])
     pygame.display.flip()
     
@@ -778,13 +780,18 @@ telafinal=True
 clock = pygame.time.Clock()
 contador = 0
 escolha_tatica = True
+scores = gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time)
+scores.append("")
+scores.append("")
+scores.append("")
+
+
 try:
     
     # Loop principal.
     running = True
     while running:
         # Ajusta a velocidade do jogo.
-        
         clock.tick(FPS)
         if telainicial == True:
             tela1()
@@ -824,11 +831,11 @@ try:
                     telatres = False
                     
         if telatres == False:
-            tela3(todas_rodadas, rodada, contador)
+            tela3(todas_rodadas, rodada, contador,scores)
             teladois = True
             contador += 1
         if telafinal ==False:
-            telaFINAL()
+            telaFINAL(scores)
             
         if contador == 180:
             teladois = False
@@ -836,6 +843,7 @@ try:
             telainicial = False
 
             contador = 0
+            scores = gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time)
             N = random.randint(0,10)
             M = random.randint(0,10)
             O = random.randint(0,9)
