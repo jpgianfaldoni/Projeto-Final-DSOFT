@@ -4,6 +4,7 @@
 Created on Sat May  4 19:14:42 2019
 
 """
+import operator
 import pygame
 from Class_Jogador import Jogador
 from Class_Time import Time
@@ -19,7 +20,7 @@ for k, v, in dicionario.items():
 
 jogadores = []
 for jogador in lista_jogadores:
-    novo_jogador = Jogador(jogador["nome"], jogador["ataque"],jogador["defesa"], jogador["overall"])
+    novo_jogador = Jogador(jogador["nome"], jogador["ataque"],jogador["defesa"], jogador["overall"],0)
     jogadores.append(novo_jogador)
     
     
@@ -48,6 +49,29 @@ calcula_ataque_defesa(time)
 
 ataques_iniciais = [495, 365, 460, 440, 380, 385, 375, 340, 350, 395] 
 defesas_iniciais = [460, 410, 515, 485, 385, 385, 420, 415, 410, 390]
+
+lista_gols = {}
+artilharia = {}
+artilharia_em_ordem = [0,0,0]
+
+
+def gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time):
+    menor_gol = 1
+    for i in time:
+        player = random.randint(8,10)
+        i.jogadores[player].gols += i.gol
+        lista_gols[i.jogadores[player].nome] = i.jogadores[player].gols
+    for k, v in lista_gols.items():
+        if v >= menor_gol:
+            artilharia[k] = v
+            menor_gol = v
+    artilharia_em_ordem = sorted(artilharia.items(),key = operator.itemgetter(1),reverse = True)
+
+            
+        
+    return artilharia_em_ordem
+
+
 
 
 def cria_lista_rodadas(time):
@@ -79,7 +103,7 @@ def minuto_partida(time1, time2, contador):
     return time1.gol,     time2.gol
 
 def pontuacao(rodada):
-    rodadas = [rodada1, rodada2, rodada3, rodada4, rodada5]
+    rodadas = [rodada1, rodada2, rodada3, rodada4, rodada5, rodada6, rodada7, rodada8, rodada9]
     if rodadas[rodada][0][1].gol > rodadas[rodada][0][0].gol:
         rodadas[rodada][0][1].pontos += 3
     if rodadas[rodada][0][0].gol > rodadas[rodada][0][1].gol:
@@ -136,7 +160,7 @@ def pontuacao(rodada):
 
 
 
-FPS = 20
+FPS = 100
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Insper Football Manager")
@@ -543,31 +567,103 @@ def tela2(classificacao, classificacao_times):
 
 def tela3(todas_rodadas, rodada, contador):
     
-
+    if contador == 0:
     
-    pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 9, 240, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 9, 250, 30)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 240, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 30)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 240, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 240, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 30)) 
-    pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 240, 30))   
-    pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 30)) 
+    
+        pygame.draw.rect(screen, BLUE, pygame.Rect(0, 0, 800, 600))
+        pygame.draw.rect(screen, WHITE,pygame.Rect(10, 9, 240, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(300, 9, 250, 30)) 
+        pygame.draw.rect(screen, WHITE,pygame.Rect(10, 50, 240, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(300, 50, 250, 30)) 
+        pygame.draw.rect(screen, WHITE,pygame.Rect(10, 90, 240, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(300, 90, 250, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(10, 130, 240, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(300,130, 250, 30)) 
+        pygame.draw.rect(screen, WHITE,pygame.Rect(10, 170, 240, 30))   
+        pygame.draw.rect(screen, WHITE,pygame.Rect(300, 170, 250, 30)) 
+        
 
+            
+        pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
+        image = pygame.image.load("Campo1.png")
+        screen.blit(image, ([-125, 300]))
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][0][0].nome), True, BLACK)
+        screen.blit(text, [20, 9])
+        image = pygame.image.load((todas_rodadas[rodada][0][0].escudo))
+        screen.blit(image, [200, 9])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][0][1].nome), True, BLACK)
+        screen.blit(text, [350, 9])
+        image = pygame.image.load((todas_rodadas[rodada][0][1].escudo))
+        screen.blit(image, [310, 9])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][1][0].nome), True, BLACK)
+        screen.blit(text, [20, 50])
+        image = pygame.image.load((todas_rodadas[rodada][1][0].escudo))
+        screen.blit(image, [200, 50])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][1][1].nome), True, BLACK)
+        screen.blit(text, [350, 50])
+        image = pygame.image.load((todas_rodadas[rodada][1][1].escudo))
+        screen.blit(image, [310, 50])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][2][0].nome), True, BLACK)
+        screen.blit(text, [20, 90])
+        image = pygame.image.load((todas_rodadas[rodada][2][0].escudo))
+        screen.blit(image, [200, 90])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][2][1].nome), True, BLACK)
+        screen.blit(text, [350, 90])
+        image = pygame.image.load((todas_rodadas[rodada][2][1].escudo))
+        screen.blit(image, [310, 90])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][3][0].nome), True, BLACK)
+        screen.blit(text, [20, 130])
+        image = pygame.image.load((todas_rodadas[rodada][3][0].escudo))
+        screen.blit(image, [200, 130])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][3][1].nome), True, BLACK)
+        screen.blit(text, [350, 130])
+        image = pygame.image.load((todas_rodadas[rodada][3][1].escudo))
+        screen.blit(image, [310, 130])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][4][0].nome), True, BLACK)
+        screen.blit(text, [20, 170])
+        image = pygame.image.load((todas_rodadas[rodada][4][0].escudo))
+        screen.blit(image, [200, 170])
+        font = pygame.font.SysFont(None, 35)
+        text = font.render(str(todas_rodadas[rodada][4][1].nome), True, BLACK)
+        screen.blit(text, [350, 170])
+        image = pygame.image.load((todas_rodadas[rodada][4][1].escudo))
+        screen.blit(image, [310, 170])
+        font = pygame.font.SysFont(None, 30)
+        
+    if rodada > 0 and contador == 0:
+        a = gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time)
+        if len(a) < 3:
+            a.append("")
+        font = pygame.font.SysFont(None, 30)
+        text = font.render(str(a[0]), True, GREEN)
+        screen.blit(text, [25, 220])
+        pygame.display.flip() 
+        text = font.render(str(a[1]), True, GREEN)
+        screen.blit(text, [25, 250])
+        pygame.display.flip() 
+        text = font.render(str(a[2]), True, GREEN)
+        screen.blit(text, [25, 280])
+        pygame.display.flip() 
+        
+        
+        
+        
+        
+    pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 9, 60, 30))
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 50, 60, 30))
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 90, 60, 30))
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 130, 60, 30))
     pygame.draw.rect(screen, BLACK,pygame.Rect(240, 170, 60, 30))
-
-    pygame.draw.rect(screen, BLACK,pygame.Rect(640, 20, 55, 50))
-    image = pygame.image.load("Campo1.png")
-    screen.blit(image, ([-125, 300]))
-    pygame.display.flip() 
-    
     font = pygame.font.SysFont(None, 25)
     text = font.render("X", True, GREEN)
     screen.blit(text, [263, 15])
@@ -575,77 +671,31 @@ def tela3(todas_rodadas, rodada, contador):
     screen.blit(text, [263, 95])
     screen.blit(text, [263, 135])
     screen.blit(text, [263, 175])
-   
-    
     font = pygame.font.SysFont(None, 50)
     text = font.render(str(minuto(contador)), True, WHITE)
     screen.blit(text, [650, 30])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][0][0].nome), True, BLACK)
-    screen.blit(text, [20, 9])
-    image = pygame.image.load((todas_rodadas[rodada][0][0].escudo))
-    screen.blit(image, [200, 9])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][0][1].nome), True, BLACK)
-    screen.blit(text, [350, 9])
-    image = pygame.image.load((todas_rodadas[rodada][0][1].escudo))
-    screen.blit(image, [310, 9])
+   
+    
+    
     font = pygame.font.SysFont(None, 30)  
     text = font.render(str(minuto_partida(todas_rodadas[rodada][0][0], todas_rodadas[rodada][0][1], contador)), True, GREEN)
     screen.blit(text, [245, 10])
     
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][1][0].nome), True, BLACK)
-    screen.blit(text, [20, 50])
-    image = pygame.image.load((todas_rodadas[rodada][1][0].escudo))
-    screen.blit(image, [200, 50])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][1][1].nome), True, BLACK)
-    screen.blit(text, [350, 50])
-    image = pygame.image.load((todas_rodadas[rodada][1][1].escudo))
-    screen.blit(image, [310, 50])
     font = pygame.font.SysFont(None, 30)
     text = font.render(str(minuto_partida(todas_rodadas[rodada][1][0], todas_rodadas[rodada][1][1], contador)), True, GREEN)
     screen.blit(text, [245, 50])
     
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][2][0].nome), True, BLACK)
-    screen.blit(text, [20, 90])
-    image = pygame.image.load((todas_rodadas[rodada][2][0].escudo))
-    screen.blit(image, [200, 90])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][2][1].nome), True, BLACK)
-    screen.blit(text, [350, 90])
-    image = pygame.image.load((todas_rodadas[rodada][2][1].escudo))
-    screen.blit(image, [310, 90])
+    
     font = pygame.font.SysFont(None, 30)
     text = font.render(str(minuto_partida(todas_rodadas[rodada][2][0], todas_rodadas[rodada][2][1], contador)), True, GREEN)
     screen.blit(text, [245, 90])
     
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][3][0].nome), True, BLACK)
-    screen.blit(text, [20, 130])
-    image = pygame.image.load((todas_rodadas[rodada][3][0].escudo))
-    screen.blit(image, [200, 130])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][3][1].nome), True, BLACK)
-    screen.blit(text, [350, 130])
-    image = pygame.image.load((todas_rodadas[rodada][3][1].escudo))
-    screen.blit(image, [310, 130])
+
     font = pygame.font.SysFont(None, 30)
     text = font.render(str(minuto_partida(todas_rodadas[rodada][3][0], todas_rodadas[rodada][3][1], contador)), True, GREEN)
     screen.blit(text, [245, 130])
     
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][4][0].nome), True, BLACK)
-    screen.blit(text, [20, 170])
-    image = pygame.image.load((todas_rodadas[rodada][4][0].escudo))
-    screen.blit(image, [200, 170])
-    font = pygame.font.SysFont(None, 35)
-    text = font.render(str(todas_rodadas[rodada][4][1].nome), True, BLACK)
-    screen.blit(text, [350, 170])
-    image = pygame.image.load((todas_rodadas[rodada][4][1].escudo))
-    screen.blit(image, [310, 170])
+    
     font = pygame.font.SysFont(None, 30)
     text = font.render(str(minuto_partida(todas_rodadas[rodada][4][0], todas_rodadas[rodada][4][1], contador)), True, GREEN)
     screen.blit(text, [245, 170])
@@ -751,13 +801,13 @@ try:
             teladois = True
             contador += 1
         if telafinal ==False:
-            print(classificacao_times)
             telaFINAL()
             
         if contador == 180:
             teladois = False
             telatres = True
             telainicial = False
+            print(gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time))
             contador = 0
             N = random.randint(0,10)
             M = random.randint(0,10)
@@ -775,7 +825,7 @@ try:
             tela2(classificacao, classificacao_times)
             
             rodada += 1
-            if rodada ==5: 
+            if rodada ==9: 
                 telafinal=False
                 teladois = True
 
