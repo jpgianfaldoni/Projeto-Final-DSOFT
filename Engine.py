@@ -160,7 +160,7 @@ def pontuacao(rodada):
 
 
 
-FPS = 100
+FPS = 20
 pygame.init()
 screen= pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Insper Football Manager")
@@ -754,7 +754,20 @@ def telaFINAL():
     text = font.render("VICE-CAMPEAO - {}".format(classificacao_times[8]), True, BLACK)
     screen.blit(text, [123, 140])
     pygame.display.flip()
-    
+    a = gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time)
+    font = pygame.font.SysFont(None, 30)
+    text = font.render("Artilheiros:", True, BLACK)
+    screen.blit(text, [40, 220])
+    font = pygame.font.SysFont(None, 30)
+    text = font.render(str(a[0]), True, WHITE)
+    screen.blit(text, [40, 250])
+    pygame.display.flip() 
+    text = font.render(str(a[1]), True, WHITE)
+    screen.blit(text, [40, 280])
+    pygame.display.flip() 
+    text = font.render(str(a[2]), True, WHITE)
+    screen.blit(text, [40, 310])
+    pygame.display.flip()
     
 telainicial=True 
 teladois=True
@@ -821,7 +834,7 @@ try:
             teladois = False
             telatres = True
             telainicial = False
-            print(gols_jogadores(lista_gols, artilharia, artilharia_em_ordem, time))
+
             contador = 0
             N = random.randint(0,10)
             M = random.randint(0,10)
