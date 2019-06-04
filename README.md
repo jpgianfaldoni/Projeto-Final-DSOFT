@@ -5,7 +5,7 @@ Alunos:
 -Joao Pedro Andrade
 -Pedro Carani
 
-Jogo estilo "Football manager" desenvolvido em Python, com 10 times da série A do Brasil, no qual seu time é sorteado no início.
+Jogo estilo "Football manager" desenvolvido em Python, com 10 times da série A do Brasil, no qual seu time é sorteado no início e conforme as rodadas acontecem, jogadores aleatórios trocam de time.
 
 Como jogar:
   
